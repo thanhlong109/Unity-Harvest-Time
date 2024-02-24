@@ -58,12 +58,14 @@ public class InventoryItem : MonoBehaviour
     private void OnSelect()
     {
         inventory.SelectedItem(this);
+        
     }
 
     public void UpdateUI()
     {
         if(ItemData != null)
         {
+            bgItem.gameObject.SetActive(true);
             if (ItemData is ICountableItem countableItem)
             {
                 tmpro.text = countableItem.Quantity.ToString();
@@ -84,6 +86,7 @@ public class InventoryItem : MonoBehaviour
         {
             icon.gameObject.SetActive(false);
             tmpro.gameObject.SetActive(false);
+            bgItem.gameObject.SetActive(false);
         } 
     }
 
@@ -125,6 +128,7 @@ public class InventoryItem : MonoBehaviour
                 if(countableItem.Quantity <= 0)
                 {
                     icon.gameObject.SetActive(false);
+                    
                     ItemData = null;
                 }
             }

@@ -183,11 +183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638f0c47c0a145646bc4bb231fb4323a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  farmerOffsetTarget: {x: 1, y: 1}
+  farmerOffsetTarget: {x: -1.5, y: -1}
   isPlanted: 0
   plant: {fileID: 5742670312817605488}
   plantData: {fileID: 11400000, guid: 970727c981bc4c543845be0dab1743e3, type: 2}
   plantState: 0
+  handAnimator: {fileID: 0}
 --- !u!61 &5392581730441644171
 BoxCollider2D:
   m_ObjectHideFlags: 0

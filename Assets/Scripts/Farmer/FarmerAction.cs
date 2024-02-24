@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.PlayerSettings;
 
 public class FarmerAction : MonoBehaviour
 {
     //Movement fields
     private Vector3? _posTarget = null;
+    private Vector3 lastTarget = Vector3.zero;
     private NavMeshAgent _agent;
     private float _currentDirection = 1;
     
@@ -16,7 +18,11 @@ public class FarmerAction : MonoBehaviour
 
     //Actions
     private Action _action = null;
+    public Animator handAnimator;
 
+    private Vector3 faceToPos ;
+    
+    
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -47,9 +53,12 @@ public class FarmerAction : MonoBehaviour
         UpdateAnimation();
         if(_action != null)
         {
+
             _posTarget = _action.targetPos;
+            lastTarget = _action.targetPos;
             if(Vector2.Distance(transform.position,_action.targetPos) < _action.radiusActionPerform)
             {
+                faceToPos = _action.targetPos;
                 _posTarget = transform.position;
                 _action.PerformAction();
                 _action = null;
@@ -58,6 +67,7 @@ public class FarmerAction : MonoBehaviour
         
     }
 
+
     void UpdateAnimation()
     {
         _animator.SetBool(MOVE_AMIN, Mathf.Abs(_agent.velocity.x)>0.01f);
@@ -65,12 +75,18 @@ public class FarmerAction : MonoBehaviour
 
     void Flip()
     {
-        if (_agent.velocity.x * _currentDirection < 0)
+        if (_agent.velocity.x != 0 && _agent.velocity.x * _currentDirection < 0)
+        {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            _currentDirection *= -1;
+        }else if(_agent.velocity.x == 0 && lastTarget.x * _currentDirection > 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             _currentDirection *= -1;
         }
+
     }
+
 
     public void SetAction(Action action)
     {

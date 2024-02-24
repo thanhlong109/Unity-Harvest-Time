@@ -19,6 +19,6 @@ MonoBehaviour:
   - {fileID: 1172349874, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   timeBtwStages: 2
   itemType: 0
-  quantity: 11
+  quantity: 0
   plantName: Plant1
   icon: {fileID: 1178078820, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
