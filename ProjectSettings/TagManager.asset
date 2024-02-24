@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Obstacle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Ground
+    uniqueID: 648579565
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Farmer
+    uniqueID: 3703943731
+    locked: 0
+  - name: FarmerTools
+    uniqueID: 3099785085
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3122838269
+    locked: 0
+  - name: Farm
+    uniqueID: 874927729
+    locked: 0
