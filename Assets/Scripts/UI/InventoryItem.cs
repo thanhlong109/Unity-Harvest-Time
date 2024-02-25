@@ -66,8 +66,10 @@ public class InventoryItem : MonoBehaviour
         if(ItemData != null)
         {
             bgItem.gameObject.SetActive(true);
+            icon.gameObject.SetActive(true);
             if (ItemData is ICountableItem countableItem)
             {
+                tmpro.gameObject.SetActive(true);
                 tmpro.text = countableItem.Quantity.ToString();
                 if (countableItem.Quantity == 0)
                 {
@@ -151,7 +153,7 @@ public class InventoryItem : MonoBehaviour
 
     public void SetItemData(IInventoryItem item)
     {
-        ItemData = item;
+        scriptableObjectData = item as ScriptableObject;
         Start();
     }
     public IInventoryItem GetItemData() { return ItemData; }

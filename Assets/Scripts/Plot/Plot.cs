@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,25 +20,33 @@ public class Plot : MonoBehaviour
     [SerializeField] private Plant plantData;
     [SerializeField] private int plantState = 0;
     [SerializeField] private Animator handAnimator;
+    [SerializeField] private float timeToDry = 300f;
+    [SerializeField] private Sprite drySprite;
+    [SerializeField] private Sprite wateredSprite;
+
+    private bool isDry = true;
+    private int rateToDie = 0;
     private float timer;
 
+
+    private SpriteRenderer plotSpriteRender;
     private FarmerAction _farmer;
     private Action action;
     private InventoryItem itemSelected;
     private Tools toolSelected;
-    
+
     private PlotActionType currentActionType;
 
     private Inventory inventory;
 
     private static int HOE_ACTION = Animator.StringToHash("HoeAction");
     private static int WATERING_ACTION = Animator.StringToHash("WateringAction");
-    
+
     private void Awake()
     {
         _farmer = FindObjectOfType<FarmerAction>();
         inventory = FindObjectOfType<Inventory>();
-        
+        plotSpriteRender = GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -60,6 +69,7 @@ public class Plot : MonoBehaviour
                     if (isPlanted)
                     {
                         Harvest();
+                        _farmer.isDoingAction = false;
                     }
                     break;
                 }
@@ -87,9 +97,10 @@ public class Plot : MonoBehaviour
                 }
             case PlotActionType.PLANT:
                 {
-                    if (plantData.Quantity > 0)
+                    if (plantData.Quantity > 0 && !isPlanted)
                     {
                         Plant();
+                        _farmer.isDoingAction = false;
                     }
                     break;
                 }
@@ -109,44 +120,77 @@ public class Plot : MonoBehaviour
         Debug.Log("Hoe done!");
         toolSelected.OnActionCompleted -= OnHoeActionDone;
         handAnimator.SetBool(HOE_ACTION, false);
+        _farmer.isDoingAction = false;
     }
 
     private void OnWateringCanActionDone()
     {
-        Debug.Log("Watering done!");
         toolSelected.OnActionCompleted -= OnWateringCanActionDone;
         handAnimator.SetBool(WATERING_ACTION, false);
+        if (isDry)
+        {
+            isDry = false;
+            StartCoroutine(CountToNextDry());
+            UpdatePlant();
+        }
+        _farmer.isDoingAction = false;
+    }
+
+    public IEnumerator CountToNextDry()
+    {
+        yield return new WaitForSeconds(timeToDry);
+        isDry = true;
+        UpdatePlant();
+
     }
 
     void Update()
     {
         if (isPlanted)
         {
-            timer -= Time.deltaTime;
-            if (timer < 0 && plantState < plantData.planetStateSprites.Length - 1)
-            {
-                timer = plantData.timeBtwStages;
-                plantState++;
-                UpdatePlant();
-            }
+            Grow();
+        }
+
+
+    }
+
+    void Grow()
+    {
+
+        timer -= Time.deltaTime;
+        if (timer < 0 && plantState < plantData.planetStateSprites.Length - 1)
+        {
+            timer = plantData.timeBtwStages;
+            plantState++;
+            UpdatePlant();
         }
     }
 
     private void OnMouseDown()
     {
         itemSelected = inventory.GetSelectedItem();
-        var itemSelectedData = itemSelected.GetItemData();
-        if (itemSelectedData is Plant)
+        if (itemSelected != null)
         {
-            currentActionType = PlotActionType.PLANT;
-            plantData = itemSelected.GetItemData() as Plant;
+            var itemSelectedData = itemSelected.GetItemData();
+            if (itemSelectedData is Plant)
+            {
+                plantData = itemSelected.GetItemData() as Plant;
+                currentActionType = PlotActionType.PLANT;
+            }
+            else if (itemSelectedData is Tools)
+            {
+                currentActionType = PlotActionType.TOOLS_ACTION;
+                toolSelected = itemSelectedData as Tools;
+            }
+        }
+        else
+        {
+            if (isPlanted)
+            {
+                currentActionType = PlotActionType.HAVEST;
+            }
+        }
 
-        }
-        else if (itemSelectedData is Tools)
-        {
-            currentActionType = PlotActionType.TOOLS_ACTION;
-            toolSelected = itemSelectedData as Tools;
-        }
         _farmer.SetAction(action);
     }
 
@@ -158,12 +202,19 @@ public class Plot : MonoBehaviour
         {
             plant.gameObject.SetActive(false);
             isPlanted = false;
+            CountableItem harvestItem =ScriptableObject.CreateInstance<CountableItem>();
+                harvestItem.Icon = plantData.planetStateSprites[plantData.planetStateSprites.Length - 1];
+                harvestItem.Name = plantData.harvestedName;
+                harvestItem.Quantity = 4;
+
+            inventory.AddItem(harvestItem);
         }
 
     }
 
     void Plant()
     {
+        plantData.timeBtwStages = plantData.timeToHarvest / plantData.planetStateSprites.Length;
         isPlanted = true;
         itemSelected.Subtract(1);
         plantState = 0;
@@ -175,6 +226,7 @@ public class Plot : MonoBehaviour
     private void UpdatePlant()
     {
         plant.sprite = plantData.planetStateSprites[plantState];
+        plotSpriteRender.sprite = isDry ? drySprite : wateredSprite;
     }
 
 

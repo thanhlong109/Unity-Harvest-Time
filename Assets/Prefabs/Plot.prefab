@@ -189,6 +189,9 @@ MonoBehaviour:
   plantData: {fileID: 11400000, guid: 970727c981bc4c543845be0dab1743e3, type: 2}
   plantState: 0
   handAnimator: {fileID: 0}
+  timeToDry: 60
+  drySprite: {fileID: 886916335, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
+  wateredSprite: {fileID: 546231371, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
 --- !u!61 &5392581730441644171
 BoxCollider2D:
   m_ObjectHideFlags: 0

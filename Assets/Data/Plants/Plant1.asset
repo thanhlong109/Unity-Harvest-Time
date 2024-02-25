@@ -17,8 +17,9 @@ MonoBehaviour:
   - {fileID: -929990085, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   - {fileID: -195727737, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   - {fileID: 1172349874, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
-  timeBtwStages: 2
-  itemType: 0
+  timeToHarvest: 10
+  harvestedName: Plant1 result
+  timeBtwStages: 2.5
   quantity: 0
   plantName: Plant1
   icon: {fileID: 1178078820, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}

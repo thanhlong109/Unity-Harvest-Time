@@ -10,12 +10,13 @@ public enum ToolsType
     AXE
 }
 
-[CreateAssetMenu(fileName = "New Tool", menuName = "Tools")]
+[CreateAssetMenu(fileName = "New Tool", menuName = "Item/Tools")]
 public class Tools : ScriptableObject, IUncountableItem
 {
     [SerializeField] private int _amounts;
     [SerializeField] private string _name;
     [SerializeField] private Sprite _icon;
+
     public float timeToCompleteAction = 2f;
     public ToolsType ToolType;
     public delegate void ActionCallback();

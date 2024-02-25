@@ -19,6 +19,7 @@ public class FarmerAction : MonoBehaviour
     //Actions
     private Action _action = null;
     public Animator handAnimator;
+    public bool isDoingAction = false;
 
     private Vector3 faceToPos ;
     
@@ -58,6 +59,7 @@ public class FarmerAction : MonoBehaviour
             lastTarget = _action.targetPos;
             if(Vector2.Distance(transform.position,_action.targetPos) < _action.radiusActionPerform)
             {
+                isDoingAction=true;
                 faceToPos = _action.targetPos;
                 _posTarget = transform.position;
                 _action.PerformAction();
@@ -90,7 +92,11 @@ public class FarmerAction : MonoBehaviour
 
     public void SetAction(Action action)
     {
-        _action = action;
+        if (!isDoingAction)
+        {
+            _action = action;
+        }
+        
     }
 
 }

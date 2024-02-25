@@ -964,6 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handAnimator: {fileID: 52555855}
+  isDoingAction: 0
 --- !u!114 &562766942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,8 +2081,8 @@ MonoBehaviour:
   ItemData:
   - {fileID: 11400000, guid: 970727c981bc4c543845be0dab1743e3, type: 2}
   - {fileID: 11400000, guid: 1ec0945221508604db04cbfa76b1ee27, type: 2}
-  - {fileID: 11400000, guid: a210a6f46fd80c94f9657f8c00bcc355, type: 2}
   - {fileID: 11400000, guid: 63f7f5a05ac4e3b4181912c4ffec6efe, type: 2}
+  - {fileID: 11400000, guid: a210a6f46fd80c94f9657f8c00bcc355, type: 2}
   - {fileID: 11400000, guid: a3344b0eda1bf6c49ad1bd96895c4434, type: 2}
   - {fileID: 11400000, guid: 39d6564a2bd24ae44b95ca8aa27b6828, type: 2}
   handAnimator: {fileID: 52555855}

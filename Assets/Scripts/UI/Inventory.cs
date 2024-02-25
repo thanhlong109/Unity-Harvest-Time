@@ -102,7 +102,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(IInventoryItem item)
     {
-        int index = inventoryUIItems.FindIndex(i => i.GetItemData().Name == item.Name);
+        int index = inventoryUIItems.FindIndex(i => i.GetItemData() != null && i.GetItemData().Name == item.Name);
         if (index < 0)
         {
             int indexNull = inventoryUIItems.FindIndex(i => i.GetItemData() == null);
@@ -133,8 +133,10 @@ public class Inventory : MonoBehaviour
     public void CreateMenuItem(IInventoryItem item)
     {
         GameObject newObject = Instantiate(ItemPrefabs);
-        newObject.GetComponent<InventoryItem>().SetItemData(item);
+        InventoryItem inventoryItem = newObject.GetComponent<InventoryItem>();
+        inventoryItem.SetItemData(item);
         newObject.transform.SetParent(transform, false);
+        inventoryUIItems.Add(inventoryItem);
     }
 
 

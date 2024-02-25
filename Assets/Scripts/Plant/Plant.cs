@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType
-{
-    COUNTABLE,
-    UN_COUNTABLE
-}
 
-[CreateAssetMenu(fileName = "New Plant",menuName ="Plant")]
+[CreateAssetMenu(fileName = "New Plant",menuName = "Item/Plant")]
 public class Plant : ScriptableObject, ICountableItem
 {
     public Sprite[] planetStateSprites;
-    public float timeBtwStages = 2f;
-    public ItemType itemType = ItemType.COUNTABLE;
+    public float timeToHarvest = 60f;
+    public string harvestedName = "";
+    [HideInInspector] public float timeBtwStages;
 
     [SerializeField] private int quantity;
     [SerializeField] private string plantName;
