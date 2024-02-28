@@ -20,7 +20,6 @@ public class FarmerAction : MonoBehaviour
     private Action _action = null;
     public Animator handAnimator;
     public bool isDoingAction = false;
-
     private Vector3 faceToPos ;
     
     
@@ -34,6 +33,7 @@ public class FarmerAction : MonoBehaviour
     {
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
+        AudioManager.Instance.PlayMusic("bgmScreenMain");
     }
 
     

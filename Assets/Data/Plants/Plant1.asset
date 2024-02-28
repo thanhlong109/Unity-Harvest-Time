@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 1172349874, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   timeToHarvest: 10
   harvestedName: Plant1 result
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   timeBtwStages: 2.5
   quantity: 0
   plantName: Plant1

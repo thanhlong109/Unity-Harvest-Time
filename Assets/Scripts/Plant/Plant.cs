@@ -9,6 +9,7 @@ public class Plant : ScriptableObject, ICountableItem
     public Sprite[] planetStateSprites;
     public float timeToHarvest = 60f;
     public string harvestedName = "";
+    public Sprite plantDieSprite;
     [HideInInspector] public float timeBtwStages;
 
     [SerializeField] private int quantity;

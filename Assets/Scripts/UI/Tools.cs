@@ -17,6 +17,8 @@ public class Tools : ScriptableObject, IUncountableItem
     [SerializeField] private string _name;
     [SerializeField] private Sprite _icon;
 
+    public Vector2 offset = new Vector2(-1.5f,-1);
+    public string sfxName;
     public float timeToCompleteAction = 2f;
     public ToolsType ToolType;
     public delegate void ActionCallback();

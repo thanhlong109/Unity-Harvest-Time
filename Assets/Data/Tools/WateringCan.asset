@@ -15,4 +15,7 @@ MonoBehaviour:
   _amounts: 100
   _name: Watering Can
   _icon: {fileID: 15825511, guid: 29278b22e6a2ed14e862b163b1606796, type: 3}
+  offset: {x: -1.5, y: -1}
+  sfxName: WateringSfx
+  timeToCompleteAction: 2
   ToolType: 0

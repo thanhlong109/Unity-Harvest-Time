@@ -15,4 +15,7 @@ MonoBehaviour:
   _amounts: 100
   _name: Pickaxe
   _icon: {fileID: 2135651675, guid: 29278b22e6a2ed14e862b163b1606796, type: 3}
+  offset: {x: -1.5, y: -1}
+  audioEffect: {fileID: 0}
+  timeToCompleteAction: 2
   ToolType: 2
