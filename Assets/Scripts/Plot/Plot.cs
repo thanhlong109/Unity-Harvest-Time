@@ -77,7 +77,7 @@ public class Plot : MonoBehaviour
                     if (isPlanted)
                     {
                         Harvest();
-                        _farmer.isDoingAction = false;
+                        _farmer.isActionAble = true;
                     }
                     break;
                 }
@@ -103,6 +103,11 @@ public class Plot : MonoBehaviour
                                 StartCoroutine(toolSelected.WaitToActionDone());
                                 break;
                             }
+                        default:
+                            {
+                                _farmer.isActionAble = true;
+                                break;
+                            }
                     }
                     AudioManager.Instance.StartPlaySFX(toolSelected.sfxName);
                     break;
@@ -116,7 +121,7 @@ public class Plot : MonoBehaviour
                             Plant();
                            
                         }
-                        _farmer.isDoingAction = false;
+                        _farmer.isActionAble = true;
                     }
                     break;
                 }
@@ -137,7 +142,7 @@ public class Plot : MonoBehaviour
         handAnimator.SetBool(HOE_ACTION, false);
         isTilled = true;
         UpdatePlotUI();
-        _farmer.isDoingAction = false;
+        _farmer.isActionAble = true;
         AudioManager.Instance.StopPlaySFX();
     }
 
@@ -152,7 +157,7 @@ public class Plot : MonoBehaviour
             StartCoroutine(CountToNextDry());
             UpdatePlotUI();
         }
-        _farmer.isDoingAction = false;
+        _farmer.isActionAble = true;
         AudioManager.Instance.StopPlaySFX();
     }
 
@@ -231,7 +236,8 @@ public class Plot : MonoBehaviour
                 harvestItem.Icon = plantData.planetStateSprites[plantData.planetStateSprites.Length - 1];
                 harvestItem.Name = plantData.harvestedName;
                 harvestItem.Quantity = 4;
-
+                harvestItem.BuyPrice = plantData.BuyPrice * 3;
+                harvestItem.SellPrice = plantData.SellPrice * 3;
                 inventory.AddItem(harvestItem);
             }
            

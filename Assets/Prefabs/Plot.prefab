@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8481849978362196912}
   - component: {fileID: 5742670312817605488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2535222500267133998}
   - component: {fileID: 467566347421200808}
   - component: {fileID: 5392581730441644171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,6 +194,7 @@ MonoBehaviour:
   wateredSprite: {fileID: 546231371, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
   dryTilledSprite: {fileID: -815450045, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
   wateredTilledSprite: {fileID: -1763133010, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
+  timeBtwStageWithGrowRate: 0
 --- !u!61 &5392581730441644171
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,12 +5,14 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
+using static UnityEditor.Progress;
 
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory Instance;
     private InventoryItem selectedItem;
-
+    
     [SerializeField] private Sprite bgMemuItem;
     [SerializeField] private Sprite bgMemuItemSelected;
     [SerializeField] private List<InventoryItem> inventoryUIItems = new List<InventoryItem>();
@@ -24,10 +26,16 @@ public class Inventory : MonoBehaviour
     private static int SELECT_PICKAXE = Animator.StringToHash("PickaxeSelected");
 
 
-
     private void Awake()
     {
-
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -100,6 +108,19 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public void RemoveItem(IInventoryItem item, int quantity)
+    {
+        int index = inventoryUIItems.FindIndex(i => i.GetItemData() != null && i.GetItemData().Name == item.Name);
+        if (index >= 0)
+        {
+            if (item is ICountableItem)
+            {
+                inventoryUIItems[index].Subtract(quantity);
+            }
+        }
+       
+    }
+
     public void AddItem(IInventoryItem item)
     {
         int index = inventoryUIItems.FindIndex(i => i.GetItemData() != null && i.GetItemData().Name == item.Name);
@@ -156,5 +177,15 @@ public class Inventory : MonoBehaviour
         return selectedItem;
     }
 
-
+    public List<ICountableItem> GetAllCountableItem()
+    {
+        List<ICountableItem> items = new List<ICountableItem>();
+        var filteredList = inventoryUIItems.Where(x => x.GetItemData() != null && x.GetItemData() is ICountableItem);
+        foreach(InventoryItem i in filteredList)
+        {
+            var x = i.GetItemData() as ICountableItem;
+            items.Add(x);
+        }
+        return items;
+    }
 }

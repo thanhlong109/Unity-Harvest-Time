@@ -6,6 +6,7 @@ using static UnityEditor.PlayerSettings;
 
 public class FarmerAction : MonoBehaviour
 {
+    public static FarmerAction Instance;
     //Movement fields
     private Vector3? _posTarget = null;
     private Vector3 lastTarget = Vector3.zero;
@@ -19,14 +20,23 @@ public class FarmerAction : MonoBehaviour
     //Actions
     private Action _action = null;
     public Animator handAnimator;
-    public bool isDoingAction = false;
-    private Vector3 faceToPos ;
+    public bool isActionAble = true;
+   
     
     
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -39,7 +49,7 @@ public class FarmerAction : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && isActionAble)
         {
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPosition.z = 0;
@@ -52,15 +62,15 @@ public class FarmerAction : MonoBehaviour
         }
         Flip();
         UpdateAnimation();
-        if(_action != null)
+        if(_action != null && isActionAble)
         {
 
             _posTarget = _action.targetPos;
             lastTarget = _action.targetPos;
             if(Vector2.Distance(transform.position,_action.targetPos) < _action.radiusActionPerform)
             {
-                isDoingAction=true;
-                faceToPos = _action.targetPos;
+                isActionAble=false;
+                
                 _posTarget = transform.position;
                 _action.PerformAction();
                 _action = null;
@@ -81,6 +91,7 @@ public class FarmerAction : MonoBehaviour
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             _currentDirection *= -1;
+            
         }else if(_agent.velocity.x == 0 && lastTarget.x * _currentDirection > 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
@@ -92,11 +103,7 @@ public class FarmerAction : MonoBehaviour
 
     public void SetAction(Action action)
     {
-        if (!isDoingAction)
-        {
             _action = action;
-        }
-        
     }
 
 }
