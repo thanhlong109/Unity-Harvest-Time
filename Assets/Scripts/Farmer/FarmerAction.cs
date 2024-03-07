@@ -82,17 +82,17 @@ public class FarmerAction : MonoBehaviour
 
     void UpdateAnimation()
     {
-        _animator.SetBool(MOVE_AMIN, Mathf.Abs(_agent.velocity.x)>0.01f);
+        _animator.SetBool(MOVE_AMIN, Mathf.Abs(_agent.velocity.x)>0.1f);
     }
 
     void Flip()
     {
-        if (_agent.velocity.x != 0 && _agent.velocity.x * _currentDirection < 0)
+        if (_agent.remainingDistance>0 && _agent.velocity.x * _currentDirection < 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             _currentDirection *= -1;
             
-        }else if(_agent.velocity.x == 0 && lastTarget.x * _currentDirection > 0)
+        }else if(_agent.remainingDistance == 0 && lastTarget.x * _currentDirection > 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             _currentDirection *= -1;

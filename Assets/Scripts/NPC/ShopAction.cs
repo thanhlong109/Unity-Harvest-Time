@@ -28,6 +28,7 @@ public class ShopAction : NPCAction
 
     }
 
+
     protected override void PerformAction()
     {
         animator.SetBool(SHOP_ACTION, true);

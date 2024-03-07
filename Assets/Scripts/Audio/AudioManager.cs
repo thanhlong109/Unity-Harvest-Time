@@ -46,6 +46,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            sfxSource.pitch = 1;
             sfxSource.clip = s.clip;
             sfxSource.PlayOneShot(s.clip);
         }
@@ -60,6 +61,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            sfxSource.pitch = 1;
             sfxSource.clip = s.clip;
             sfxSource.loop = true;
             sfxSource.Play();
@@ -101,6 +103,22 @@ public class AudioManager : MonoBehaviour
     {
         return sfxSource.volume;
     }
-    
+    public void PlaySFXRandomPitch(string name,float start = 0,float end = 3)
+    {
+        Sound s = Array.Find(sfxSounds, match => match.name == name);
+        if (s == null)
+        {
+            Debug.Log("sound " + name + " not found!");
+        }
+        else
+        { 
+            float e = UnityEngine.Random.Range(start, end);
+            sfxSource.pitch = e;
+            sfxSource.clip = s.clip;
+            sfxSource.PlayOneShot(s.clip);
+        }
+            
+        
+    }
     
 }

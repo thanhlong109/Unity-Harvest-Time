@@ -39,13 +39,16 @@ public class ShopItem : MonoBehaviour
             item.Quantity = 1;
             Inventory.Instance.AddItem(item);
         }
-        
+        WalletManager.Instance.SubtractMoney(inventoryItem.BuyPrice);
+        AudioManager.Instance.PlaySFX("CashSfx");
     } 
 
     public void OnSellClick()
     {
         Inventory.Instance.RemoveItem(inventoryItem, 1);
+        WalletManager.Instance.AddMoney(inventoryItem.SellPrice);
         UpdateUI();
+        AudioManager.Instance.PlaySFX("CashSfx");
     }
 
     private void UpdateUI()
