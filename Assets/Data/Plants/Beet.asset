@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c9c32b8e7f114bb4d88f58e94edd5, type: 3}
+  m_Name: Beet
+  m_EditorClassIdentifier: 
+  planetStateSprites:
+  - {fileID: 21300000, guid: c7378aff7c8523e41a86ff35798be987, type: 3}
+  - {fileID: 21300000, guid: b835167e1e1f46b4d85d7ee99debd080, type: 3}
+  - {fileID: 21300000, guid: 81327e27b7de3a544a257f3ea2f4139d, type: 3}
+  - {fileID: 21300000, guid: 35f2a3d7d65be1f4ea289618ca7248fa, type: 3}
+  - {fileID: 21300000, guid: 8a7e3783f1bf1814ab5a941b986449b2, type: 3}
+  - {fileID: 21300000, guid: d8f105deee587294da626de60713e558, type: 3}
+  - {fileID: 21300000, guid: af8b316de0184a04ea6abc802865631d, type: 3}
+  - {fileID: 21300000, guid: 95ed96be7eac6564aaeca91a22d29f0e, type: 3}
+  - {fileID: 21300000, guid: 1d9c0f83aafb0554aa1b332f4c055e3d, type: 3}
+  - {fileID: 21300000, guid: 87aaaf9073b411644871400f1a572151, type: 3}
+  - {fileID: 21300000, guid: fc6aff02a5fd4f14f97b25f3db2bb826, type: 3}
+  - {fileID: 21300000, guid: 29ef57b9cb423574d9933167391150d4, type: 3}
+  - {fileID: 21300000, guid: bbf75ae5e3272ff49a0c18cb75e56758, type: 3}
+  timeToHarvest: 60
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  sellPrice: 4
+  buyPrice: 10
+  timeBtwStages: 4.6153846
+  quantity: 90
+  plantName: Beet Seed
+  icon: {fileID: 21300000, guid: c7378aff7c8523e41a86ff35798be987, type: 3}
+  harvestedName: Beet
+  harvestedIcon: {fileID: 21300000, guid: bbf75ae5e3272ff49a0c18cb75e56758, type: 3}

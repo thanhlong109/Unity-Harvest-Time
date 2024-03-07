@@ -18,11 +18,12 @@ MonoBehaviour:
   - {fileID: -195727737, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   - {fileID: 1172349874, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   timeToHarvest: 10
-  harvestedName: Plant1 result
   plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   sellPrice: 4
   buyPrice: 10
   timeBtwStages: 2.5
-  quantity: 433
+  quantity: 431
   plantName: Plant1
   icon: {fileID: 1178078820, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  harvestedName: Plant1 result
+  harvestedIcon: {fileID: 1172349874, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}

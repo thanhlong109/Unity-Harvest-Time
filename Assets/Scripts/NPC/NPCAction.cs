@@ -30,8 +30,5 @@ public class NPCAction : MonoBehaviour
 
     
 
-    private void OnMouseDown()
-    {
-        FarmerAction.Instance.SetAction(action);
-    }
+   
 }

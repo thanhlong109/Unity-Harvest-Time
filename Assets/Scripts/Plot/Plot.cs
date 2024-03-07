@@ -77,8 +77,9 @@ public class Plot : MonoBehaviour
                     if (isPlanted)
                     {
                         Harvest();
-                        _farmer.isActionAble = true;
+                       
                     }
+                    _farmer.isActionAble = true;
                     break;
                 }
             case PlotActionType.TOOLS_ACTION:
@@ -121,8 +122,9 @@ public class Plot : MonoBehaviour
                             Plant();
                            
                         }
-                        _farmer.isActionAble = true;
+                        
                     }
+                    _farmer.isActionAble = true;
                     break;
                 }
 
@@ -233,7 +235,7 @@ public class Plot : MonoBehaviour
             if (!isPlantDie)
             {
                 CountableItem harvestItem =ScriptableObject.CreateInstance<CountableItem>();
-                harvestItem.Icon = plantData.planetStateSprites[plantData.planetStateSprites.Length - 1];
+                harvestItem.Icon = plantData.harvestedIcon;
                 harvestItem.Name = plantData.harvestedName;
                 harvestItem.Quantity = 4;
                 harvestItem.BuyPrice = plantData.BuyPrice * 3;
@@ -258,11 +260,13 @@ public class Plot : MonoBehaviour
 
     void Plant()
     {
+        AudioManager.Instance.PlaySFX("PlantingSfx");
         plantData.timeBtwStages = plantData.timeToHarvest / plantData.planetStateSprites.Length;
         isPlanted = true;
         itemSelected.Subtract(1);
         plantState = 0;
         UpdatePlotUI();
+        UpdatePlant();
         timer = timeBtwStageWithGrowRate;
         plant.gameObject.SetActive(true);
     }
@@ -287,7 +291,7 @@ public class Plot : MonoBehaviour
     private void UpdatePlant()
     {
         plant.sprite = plantData.planetStateSprites[plantState];
-        var randomValue = Random.Range(0, 100);
+       /* var randomValue = Random.Range(0, 100);
         if(randomValue < rateToDie)
         {
             isPlantDie = true;
@@ -301,7 +305,7 @@ public class Plot : MonoBehaviour
         {
             plant.sprite = plantData.plantDieSprite;
         }
-        
+        */
     }
 
     private void CalTimeGrowWithGrowRate()

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c9c32b8e7f114bb4d88f58e94edd5, type: 3}
+  m_Name: Pumpkin Seed
+  m_EditorClassIdentifier: 
+  planetStateSprites:
+  - {fileID: 21300000, guid: a61d3221d32ca4645b328d120fbb36f3, type: 3}
+  - {fileID: 21300000, guid: a66e51d52fb020f43b87e75ab4058961, type: 3}
+  - {fileID: 21300000, guid: f2632df32420a0446a45bc9f5e003ffc, type: 3}
+  - {fileID: 21300000, guid: 0123aca4d2b0cc24d98b655d2179b772, type: 3}
+  - {fileID: 21300000, guid: 9e5802e63ba231d4d95a3d391ffd1cbd, type: 3}
+  - {fileID: 21300000, guid: 45a4fbea951d0c0469655d108ff98ebd, type: 3}
+  - {fileID: 21300000, guid: 33b3d825c997cf544a4ef4c9e5a96778, type: 3}
+  - {fileID: 21300000, guid: b2648bf9cafb57841849e1226d7f0c6e, type: 3}
+  - {fileID: 21300000, guid: 87cc595295ef7644ba153c14f5dbd7b5, type: 3}
+  - {fileID: 21300000, guid: 892be790e7961444688f74234e3d9ec9, type: 3}
+  - {fileID: 21300000, guid: 977a4b76ca348c1489bda3a7b0268bad, type: 3}
+  - {fileID: 21300000, guid: b4039b591978b484c9a908281779b808, type: 3}
+  - {fileID: 21300000, guid: 6398104e725735942855ad48e43b853d, type: 3}
+  - {fileID: 21300000, guid: a5ed25ac8b539da44960f1f96423560b, type: 3}
+  - {fileID: 21300000, guid: 0a7a07fe7deafa24bbcaacd6da991942, type: 3}
+  - {fileID: 21300000, guid: 88c914eb2178ff7488a85d25cfca8395, type: 3}
+  - {fileID: 21300000, guid: d8edf431e5daf4348b1e8cab126d5853, type: 3}
+  - {fileID: 21300000, guid: 162ef20eea2aafd4dbb8f5a574b37ea9, type: 3}
+  - {fileID: 21300000, guid: 182ee2b4be3f2b74798b3a33d143cb03, type: 3}
+  - {fileID: 21300000, guid: c76422e04baabf24691eb6e59805b78c, type: 3}
+  timeToHarvest: 60
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  sellPrice: 4
+  buyPrice: 10
+  timeBtwStages: 3
+  quantity: 81
+  plantName: Pumpkin Seed
+  icon: {fileID: 21300000, guid: a61d3221d32ca4645b328d120fbb36f3, type: 3}
+  harvestedName: Pumpkin
+  harvestedIcon: {fileID: 21300000, guid: 63d4dd8e855b37f41a6d816c9dc4a707, type: 3}

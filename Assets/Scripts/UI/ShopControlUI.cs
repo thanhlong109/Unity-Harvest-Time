@@ -16,4 +16,8 @@ public class ShopControlUI : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX("OpenShopSfx");
     }
+    public void PlaySFXShopTalk()
+    {
+        AudioManager.Instance.PlaySFX("ShopTalkSfx");
+    }
 }

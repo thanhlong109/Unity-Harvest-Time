@@ -77,6 +77,10 @@ public class ShopAction : NPCAction
         FarmerAction.Instance.isActionAble = true;
     }
 
+    private void OnMouseDown()
+    {
+        FarmerAction.Instance.SetAction(action);
+    }
 
 
 }
