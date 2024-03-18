@@ -25,9 +25,9 @@ public class Plot : MonoBehaviour
     [SerializeField] private Sprite wateredSprite;
     [SerializeField] private Sprite dryTilledSprite;
     [SerializeField] private Sprite wateredTilledSprite;
-    
 
-    private bool isDry = true;
+
+    [SerializeField]  private bool isDry = true;
     private int rateToDie = 0;
     private bool isPlantDie = false;
     private float timer;
@@ -84,6 +84,8 @@ public class Plot : MonoBehaviour
                 }
             case PlotActionType.TOOLS_ACTION:
                 {
+                   
+                    
                     ResetToolsAnimation();
                     switch (toolSelected.ToolType)
                     {
@@ -99,6 +101,7 @@ public class Plot : MonoBehaviour
                             }
                         case ToolsType.WATERING_CAN:
                             {
+                                
                                 handAnimator.SetBool(WATERING_ACTION, true);
                                 toolSelected.OnActionCompleted += OnWateringCanActionDone;
                                 StartCoroutine(toolSelected.WaitToActionDone());
@@ -106,6 +109,7 @@ public class Plot : MonoBehaviour
                             }
                         default:
                             {
+                                
                                 _farmer.isActionAble = true;
                                 break;
                             }
@@ -197,9 +201,15 @@ public class Plot : MonoBehaviour
     {
         itemSelected = inventory.GetSelectedItem();
         _farmerOffsetTarget = farmerOffsetTarget;
+        
         if (itemSelected != null)
         {
             var itemSelectedData = itemSelected.GetItemData();
+
+            if (isPlanted && plantState == plantData.planetStateSprites.Length - 1)
+            {
+                currentActionType = PlotActionType.HAVEST;
+            }else
             if (itemSelectedData is Plant)
             {
                 plantData = itemSelected.GetItemData() as Plant;
@@ -208,10 +218,11 @@ public class Plot : MonoBehaviour
             else if (itemSelectedData is Tools)
             {
                 currentActionType = PlotActionType.TOOLS_ACTION;
-               
+                
                 toolSelected = itemSelectedData as Tools;
                 _farmerOffsetTarget = toolSelected.offset;
             }
+           
         }
         else
         {

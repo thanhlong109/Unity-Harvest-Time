@@ -42,7 +42,7 @@ public class Plant : ScriptableObject, ICountableItem
         coppy.planetStateSprites = planetStateSprites;
         coppy.timeToHarvest = timeToHarvest;
         coppy.harvestedName = harvestedName;
-     
+        coppy.harvestedIcon = harvestedIcon;
         return coppy;
     }
 }

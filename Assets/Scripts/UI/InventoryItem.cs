@@ -14,7 +14,7 @@ public class InventoryItem : MonoBehaviour
     private Button btn;
     private Image bgItem;
     private Inventory inventory;
-    
+
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class InventoryItem : MonoBehaviour
         {
             ItemData = (IInventoryItem)scriptableObjectData;
         }
-        
+
         if (ItemData != null)
         {
             icon.sprite = ItemData.Icon;
@@ -58,12 +58,12 @@ public class InventoryItem : MonoBehaviour
     private void OnSelect()
     {
         inventory.SelectedItem(this);
-        
+
     }
 
     public void UpdateUI()
     {
-        if(ItemData != null)
+        if (ItemData != null)
         {
             bgItem.gameObject.SetActive(true);
             icon.gameObject.SetActive(true);
@@ -79,7 +79,7 @@ public class InventoryItem : MonoBehaviour
                     ItemData = null;
                 }
             }
-            else if(ItemData is IUncountableItem uncountableItem)
+            else if (ItemData is IUncountableItem uncountableItem)
             {
 
             }
@@ -89,22 +89,23 @@ public class InventoryItem : MonoBehaviour
             icon.gameObject.SetActive(false);
             tmpro.gameObject.SetActive(false);
             bgItem.gameObject.SetActive(false);
-        } 
+        }
     }
 
     public void SetBgIcon(Sprite icon)
     {
         bgItem.sprite = icon;
     }
-    
+
     public void Add(int amount)
     {
-        if(ItemData != null)
+        if (ItemData != null)
         {
-            if(ItemData is ICountableItem countableItem)
+            if (ItemData is ICountableItem countableItem)
             {
                 countableItem.Quantity += amount;
-            }else if(ItemData is IUncountableItem uncountableItem)
+            }
+            else if (ItemData is IUncountableItem uncountableItem)
             {
                 var temp = uncountableItem.Amounts + amount;
                 if (temp < 100)
@@ -126,12 +127,14 @@ public class InventoryItem : MonoBehaviour
         {
             if (ItemData is ICountableItem countableItem)
             {
+
                 countableItem.Quantity -= amount;
-                if(countableItem.Quantity <= 0)
+                if (countableItem.Quantity <= 0)
                 {
                     icon.gameObject.SetActive(false);
-                    
+
                     ItemData = null;
+                    UpdateUI();
                 }
             }
             else if (ItemData is IUncountableItem uncountableItem)
@@ -145,11 +148,12 @@ public class InventoryItem : MonoBehaviour
                 {
                     uncountableItem.Amounts = 100;
                 }
+                UpdateUI();
             }
             UpdateUI();
         }
     }
-    
+
 
     public void SetItemData(IInventoryItem item)
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShopAction : NPCAction
@@ -82,5 +83,6 @@ public class ShopAction : NPCAction
         FarmerAction.Instance.SetAction(action);
     }
 
+ 
 
 }

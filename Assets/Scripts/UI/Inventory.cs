@@ -5,7 +5,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
-using static UnityEditor.Progress;
 
 
 public class Inventory : MonoBehaviour
@@ -115,10 +114,10 @@ public class Inventory : MonoBehaviour
         {
             if (item is ICountableItem)
             {
-                inventoryUIItems[index].Subtract(quantity);
+                 inventoryUIItems[index].Subtract(quantity);
             }
+           
         }
-       
     }
 
     public void AddItem(IInventoryItem item)

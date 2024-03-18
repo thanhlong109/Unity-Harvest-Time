@@ -42,6 +42,7 @@ public class Animal : MonoBehaviour
     [SerializeField] private Sprite badStatus;
     [SerializeField] private SpriteRenderer statusRender;
     [SerializeField] private float maxTimeDisplayStatus;
+    [SerializeField] private ScriptableObject feedName;
 
     private bool isDisplayingStatus;
     private Action action = new Action();
@@ -142,10 +143,14 @@ public class Animal : MonoBehaviour
 
     public void Feed()
     {
+        DisplayStatus(AnimalStatus.GOOD);
         AudioManager.Instance.PlaySFXRandomPitch(animalData.feedSoundSFXName, 0.8f,1.2f);
         health = animalData.health;
-        hungryAmount = 0;
-        DisplayStatus(AnimalStatus.GOOD);
+        if(hungryAmount > 20 && feedName is IInventoryItem item)
+        {
+
+            Inventory.Instance.RemoveItem(item, 1);
+        }
         UpdateUI();
     }
 

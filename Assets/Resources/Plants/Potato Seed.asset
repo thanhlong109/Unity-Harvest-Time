@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c9c32b8e7f114bb4d88f58e94edd5, type: 3}
+  m_Name: Potato Seed
+  m_EditorClassIdentifier: 
+  planetStateSprites:
+  - {fileID: 21300000, guid: a968f830153e39e4d8dc43798a0a70a3, type: 3}
+  - {fileID: 21300000, guid: cfcd0a41db4c1534a9fd7db9d30fba42, type: 3}
+  - {fileID: 21300000, guid: d41bfab564961cc49abbaf086c5834f8, type: 3}
+  - {fileID: 21300000, guid: 1790444a5d9108d448a22578ddbafb3d, type: 3}
+  - {fileID: 21300000, guid: 9e6bc746e95b9c04b8f6bca35ebcdeb8, type: 3}
+  - {fileID: 21300000, guid: ea5d29a723199dc409416cfc0a20de28, type: 3}
+  - {fileID: 21300000, guid: 06affe2b9d1d8da45991f2d368819eb4, type: 3}
+  timeToHarvest: 60
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  sellPrice: 4
+  buyPrice: 10
+  timeBtwStages: 3
+  quantity: 73
+  plantName: Potato Seed
+  icon: {fileID: 21300000, guid: c8dbba2847e225344bf7206c6f89eac4, type: 3}
+  harvestedName: Potato
+  harvestedIcon: {fileID: 21300000, guid: eb993ca7329a1d749830a716a4e323bd, type: 3}

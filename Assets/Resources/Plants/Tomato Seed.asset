@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c9c32b8e7f114bb4d88f58e94edd5, type: 3}
+  m_Name: Tomato Seed
+  m_EditorClassIdentifier: 
+  planetStateSprites:
+  - {fileID: 21300000, guid: 5bc90e68edba2fa4aa5fdae9d0700572, type: 3}
+  - {fileID: 21300000, guid: 5984f4781ea54864f8525ac1f4c187ac, type: 3}
+  - {fileID: 21300000, guid: 122d9ca69fe1b0748990fa92fe9d105e, type: 3}
+  - {fileID: 21300000, guid: 8dd8f874cb971ec48a11f6e3bdbb3ae7, type: 3}
+  - {fileID: 21300000, guid: ab01abc6404922e409136567aa0dd83c, type: 3}
+  - {fileID: 21300000, guid: a7ce478f783fc844ebca32edfe341071, type: 3}
+  - {fileID: 21300000, guid: 2132b8211970a6346a3d1cb0dd6b49fc, type: 3}
+  - {fileID: 21300000, guid: b9b4da7ec5bd6614389ab7f1803a0bec, type: 3}
+  - {fileID: 21300000, guid: d41a9bb9b970a1a4696eac39cd911fa1, type: 3}
+  - {fileID: 21300000, guid: 48b257d696649984b9f49ba55191fc0d, type: 3}
+  - {fileID: 21300000, guid: de336a227c22bcc44ab4f2d7b298c2d0, type: 3}
+  - {fileID: 21300000, guid: 78531ac9e48e21e4fba37eb9b8bbd86a, type: 3}
+  - {fileID: 21300000, guid: 4729a7a5d8b838144ab080141faa7a4d, type: 3}
+  - {fileID: 21300000, guid: ac497cce2ccc9594e945199da18aba1f, type: 3}
+  - {fileID: 21300000, guid: ebbee279c14865a42aab96b6e74b1043, type: 3}
+  - {fileID: 21300000, guid: c7a3153e56bf4614a821919987084d9d, type: 3}
+  - {fileID: 21300000, guid: 4fdc2204c52782d4a9237a478d99841c, type: 3}
+  - {fileID: 21300000, guid: 0f15db201fcdef34cb62524943e75593, type: 3}
+  - {fileID: 21300000, guid: 6dd53c8363ea1b542801c29213c875c2, type: 3}
+  - {fileID: 21300000, guid: 0c7cc59d38fd1524e9c6ddc81ce275fe, type: 3}
+  timeToHarvest: 60
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  sellPrice: 4
+  buyPrice: 10
+  timeBtwStages: 3
+  quantity: 73
+  plantName: Tomato Seed
+  icon: {fileID: 21300000, guid: 5391391357ab4a943abe6adb408be0fa, type: 3}
+  harvestedName: Tomato
+  harvestedIcon: {fileID: 21300000, guid: 49a5234d46477464ea07022d2f0a9fbd, type: 3}

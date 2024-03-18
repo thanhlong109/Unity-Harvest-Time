@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c9c32b8e7f114bb4d88f58e94edd5, type: 3}
+  m_Name: Carrot Seed
+  m_EditorClassIdentifier: 
+  planetStateSprites:
+  - {fileID: 21300000, guid: f26e0469ecbdb6343b02af0b5de6d08c, type: 3}
+  - {fileID: 21300000, guid: 5dd8f2d75ce92ca418708e2e82d44e8f, type: 3}
+  - {fileID: 21300000, guid: 01771a4a2aff74d43816642d6ddee83f, type: 3}
+  - {fileID: 21300000, guid: ccff84b91055bae46818c7e07addf12a, type: 3}
+  - {fileID: 21300000, guid: fedaf5cdacad16a46b814f35444a8b16, type: 3}
+  - {fileID: 21300000, guid: b8a2b8b0d6819e349b6336eaec9a2c64, type: 3}
+  - {fileID: 21300000, guid: 66a246fa08a04244a9514574298cfb9d, type: 3}
+  - {fileID: 21300000, guid: 0cc6943117a81a24686723983d009ef5, type: 3}
+  - {fileID: 21300000, guid: f3250a69c85f01d4cb347eca722ae869, type: 3}
+  - {fileID: 21300000, guid: 66843796198bfb044b01a269aafb77f0, type: 3}
+  - {fileID: 21300000, guid: 5ede86ca5919e9642b0cdbf0228d98a4, type: 3}
+  - {fileID: 21300000, guid: 57ec2b359a193cf4bbd7993ee05ff2f6, type: 3}
+  - {fileID: 21300000, guid: bbca30fa2e0a6b74c920ec6a5b586ed4, type: 3}
+  - {fileID: 21300000, guid: f07e93f1d2bef1d40866d1fe400c7efe, type: 3}
+  - {fileID: 21300000, guid: 70705c1a30b375b43bf30fcb5e01637e, type: 3}
+  - {fileID: 21300000, guid: d208667fab3fd054ab0fc4e235e397a8, type: 3}
+  timeToHarvest: 60
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  sellPrice: 4
+  buyPrice: 10
+  timeBtwStages: 3
+  quantity: 81
+  plantName: Carrot Seed
+  icon: {fileID: 21300000, guid: af60efdbe0994c5499d28b6909b05d31, type: 3}
+  harvestedName: Carrot
+  harvestedIcon: {fileID: 21300000, guid: 6288591c63e99b84988c3b7253dc856d, type: 3}

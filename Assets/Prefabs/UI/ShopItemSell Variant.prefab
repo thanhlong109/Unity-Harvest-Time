@@ -112,7 +112,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SellBtn
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2765715361966059286, guid: 9cc1a11708a4aac42857ed86c70b19ff, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
