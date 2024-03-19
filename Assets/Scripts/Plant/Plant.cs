@@ -7,16 +7,20 @@ using UnityEngine;
 public class Plant : ScriptableObject, ICountableItem
 {
     public Sprite[] planetStateSprites;
+
+    [Header("Seed")]
     public float timeToHarvest = 60f;
-    public string harvestedName = "";
     public Sprite plantDieSprite;
     public int sellPrice;
     public int buyPrice;
     [HideInInspector] public float timeBtwStages;
-
     [SerializeField] private int quantity;
     [SerializeField] private string plantName;
     [SerializeField] private Sprite icon;
+
+    [Header("Harvest")]
+    public string harvestedName;
+    public Sprite harvestedIcon;
 
     public int Quantity { get => quantity ; set => quantity = value; }
     public string Name { get => plantName; set => plantName = value ; }
@@ -38,7 +42,7 @@ public class Plant : ScriptableObject, ICountableItem
         coppy.planetStateSprites = planetStateSprites;
         coppy.timeToHarvest = timeToHarvest;
         coppy.harvestedName = harvestedName;
-     
+        coppy.harvestedIcon = harvestedIcon;
         return coppy;
     }
 }

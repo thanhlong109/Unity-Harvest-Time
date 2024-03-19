@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c9c32b8e7f114bb4d88f58e94edd5, type: 3}
+  m_Name: Corn Seed
+  m_EditorClassIdentifier: 
+  planetStateSprites:
+  - {fileID: 21300000, guid: b427b7ea11b233a44b7add1ec23c0adf, type: 3}
+  - {fileID: 21300000, guid: 59869c37de82a8c40a40649c1d3c2c29, type: 3}
+  - {fileID: 21300000, guid: d57c0144027e2f349954e2abcbcc3ea0, type: 3}
+  - {fileID: 21300000, guid: 25808c6ea756b0d4a81ceb355e09cea4, type: 3}
+  - {fileID: 21300000, guid: 1930f8df56438344598a6575be5ad892, type: 3}
+  - {fileID: 21300000, guid: c2f7390f090b512468e72359d2c15d75, type: 3}
+  - {fileID: 21300000, guid: 855d451f9a355464083beb26369ef748, type: 3}
+  - {fileID: 21300000, guid: d5a623dd39a2bd6479c5e0efb8e60aa5, type: 3}
+  - {fileID: 21300000, guid: 91306353a244f4744bfc3cd717a65fe6, type: 3}
+  - {fileID: 21300000, guid: 80f243371675c2a4c94af1fdab0d89da, type: 3}
+  - {fileID: 21300000, guid: beace89c4b588a546a73ece4f89ac723, type: 3}
+  - {fileID: 21300000, guid: 54e10de2d8cdeef4597b5713b4d05408, type: 3}
+  - {fileID: 21300000, guid: a8a632f727f68734fb39d4df0db6d5c3, type: 3}
+  - {fileID: 21300000, guid: d2345c5cf63d7e0408f51f0a35815519, type: 3}
+  - {fileID: 21300000, guid: 2ad5d5647e230564a9697ea2d6356798, type: 3}
+  - {fileID: 21300000, guid: 2251bf3c588e9434eb04030eed9b66c6, type: 3}
+  - {fileID: 21300000, guid: 521bbaf1b0a2baa42939001b863ed4e9, type: 3}
+  - {fileID: 21300000, guid: 6d988a3071fd601478c1a6ebbc8d0eef, type: 3}
+  - {fileID: 21300000, guid: 02011c54a69a8d14cb405af37f8196ec, type: 3}
+  - {fileID: 21300000, guid: f26968934e4bfae46bef6c1e31c67f7b, type: 3}
+  timeToHarvest: 60
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  sellPrice: 4
+  buyPrice: 10
+  timeBtwStages: 3
+  quantity: 81
+  plantName: Corn Seed
+  icon: {fileID: 21300000, guid: d0bc1afa7f05fa746a772d29127695f0, type: 3}
+  harvestedName: Corn
+  harvestedIcon: {fileID: 21300000, guid: 790018486c2e7114ea9fc2268ecc31f6, type: 3}

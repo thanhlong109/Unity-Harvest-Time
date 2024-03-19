@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.PlayerSettings;
 
 public class FarmerAction : MonoBehaviour
 {
@@ -21,8 +20,7 @@ public class FarmerAction : MonoBehaviour
     private Action _action = null;
     public Animator handAnimator;
     public bool isActionAble = true;
-   
-    
+
     
     private void Awake()
     {
@@ -31,7 +29,7 @@ public class FarmerAction : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+           
         }
         else
         {
@@ -44,7 +42,9 @@ public class FarmerAction : MonoBehaviour
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
         AudioManager.Instance.PlayMusic("bgmScreenMain");
+        
     }
+
 
     
     void Update()
@@ -105,5 +105,6 @@ public class FarmerAction : MonoBehaviour
     {
             _action = action;
     }
+
 
 }

@@ -60,6 +60,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1f9e729b681ce664cb2d61ac2b61d736, type: 3}
   - name: SheepSfx
     clip: {fileID: 8300000, guid: e646b8bf14207c7439dfb2d51278f338, type: 3}
+  - name: CashSfx
+    clip: {fileID: 8300000, guid: ce4944107889b3e4bacb45dea2f85a4d, type: 3}
+  - name: OpenShopSfx
+    clip: {fileID: 8300000, guid: 216d09c2831298346bb2c95adfe40b24, type: 3}
+  - name: ShopTalkSfx
+    clip: {fileID: 8300000, guid: 396a8329ba3d69144bdd89b8dfb69618, type: 3}
+  - name: PlantingSfx
+    clip: {fileID: 8300000, guid: 0683ba9634047a642928549b6d3035b0, type: 3}
   musicSource: {fileID: 226932154319497055}
   sfxSource: {fileID: 4408412691975003725}
 --- !u!1 &303715919095166602

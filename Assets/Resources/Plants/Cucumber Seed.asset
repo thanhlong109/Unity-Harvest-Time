@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c9c32b8e7f114bb4d88f58e94edd5, type: 3}
+  m_Name: Cucumber Seed
+  m_EditorClassIdentifier: 
+  planetStateSprites:
+  - {fileID: 21300000, guid: d3f587590ccab5d4692c687431d226d4, type: 3}
+  - {fileID: 21300000, guid: 922c332dcee743e47a50320b2939cfbc, type: 3}
+  - {fileID: 21300000, guid: 64fba3d7bca3aac4ebe324fc21d98c01, type: 3}
+  - {fileID: 21300000, guid: 0c9c14beafceec946b43a16962436238, type: 3}
+  - {fileID: 21300000, guid: 7b403e91b3808d04ba28818f4c7fc71d, type: 3}
+  - {fileID: 21300000, guid: a9bb945fabf8c1b41825ca72c1825207, type: 3}
+  - {fileID: 21300000, guid: f893570c528d3bb44afde3301dee91e6, type: 3}
+  - {fileID: 21300000, guid: af11f5543ea3e184bb63ffdb868a0b5a, type: 3}
+  - {fileID: 21300000, guid: 35c481ea939ddea45a4d624ab237a27a, type: 3}
+  - {fileID: 21300000, guid: c1d4b4018f54e4748a767367f2f1a9da, type: 3}
+  - {fileID: 21300000, guid: 057b9cb48d6d3aa4fa1fef6ea8d94bdc, type: 3}
+  - {fileID: 21300000, guid: dea81e11ebc1e4f439a13cccd6fe93be, type: 3}
+  - {fileID: 21300000, guid: 6d5887532c9012447a0dc60f66f0ffd0, type: 3}
+  - {fileID: 21300000, guid: 9f3a0f147d213a64c836cc500655f368, type: 3}
+  - {fileID: 21300000, guid: 55eb1cff87154084daa94545fcacb5c2, type: 3}
+  - {fileID: 21300000, guid: 4a7c928f2f994e04a9f81dee39768ecf, type: 3}
+  - {fileID: 21300000, guid: 7454cbe8c95e2ec4291547760d6d442e, type: 3}
+  - {fileID: 21300000, guid: 0385cbb19f6644e4da817144b1b17845, type: 3}
+  - {fileID: 21300000, guid: 1d3409e7ca7bc164a89bf36a90534b24, type: 3}
+  - {fileID: 21300000, guid: 2ed3128a0ef0d154c8636c56861cc858, type: 3}
+  timeToHarvest: 60
+  plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  sellPrice: 4
+  buyPrice: 10
+  timeBtwStages: 3
+  quantity: 0
+  plantName: Cucumber Seed
+  icon: {fileID: 21300000, guid: 9e1e296b95f2c2a40b7ba00a519618eb, type: 3}
+  harvestedName: 'Cucumber '
+  harvestedIcon: {fileID: 21300000, guid: 83f29f3809544a04ca53b3c025a0b235, type: 3}

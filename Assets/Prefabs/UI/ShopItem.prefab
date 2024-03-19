@@ -57,6 +57,7 @@ MonoBehaviour:
   Price: {fileID: 437283853144837798}
   ItemName: {fileID: 4739723780470117020}
   ButtonBuy: {fileID: 2673078382881895893}
+  shopItemType: 0
 --- !u!1 &3576618753074224790
 GameObject:
   m_ObjectHideFlags: 0

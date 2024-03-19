@@ -29,9 +29,9 @@ public class ShopItem : MonoBehaviour
     public void OnBuyClick()
     {
         
-        if(inventoryItem is Plant)
+        if(inventoryItem is Plant plant)
         {
-            Plant item = (Plant)inventoryItem.Clone();
+            Plant item = (Plant) plant.Clone();
             item.Quantity = 1;
             Inventory.Instance.AddItem(item);
         }else if(inventoryItem is CountableItem) {

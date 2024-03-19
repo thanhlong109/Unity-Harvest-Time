@@ -21,7 +21,7 @@ public class WalletManager : MonoBehaviour
 
     void Start()
     {
-        wallet += firstGive;
+        wallet = ManageData.instance.SaveData.money;
         UpdateUI();
     }
 
@@ -49,5 +49,10 @@ public class WalletManager : MonoBehaviour
     public void UpdateUI()
     {
         WalletText.text = "$ " + wallet.ToString();
+    }
+
+    private void OnApplicationQuit()
+    {
+        ManageData.instance.SaveData.money = wallet;
     }
 }
