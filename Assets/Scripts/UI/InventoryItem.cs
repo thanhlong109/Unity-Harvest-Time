@@ -76,7 +76,11 @@ public class InventoryItem : MonoBehaviour
                     icon.gameObject.SetActive(false);
                     inventory.SelectedItem(this);
                     tmpro.gameObject.SetActive(false);
-                    ItemData = null;
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    gameObject.SetActive(true);
                 }
             }
             else if (ItemData is IUncountableItem uncountableItem)
@@ -132,9 +136,7 @@ public class InventoryItem : MonoBehaviour
                 if (countableItem.Quantity <= 0)
                 {
                     icon.gameObject.SetActive(false);
-
-                    ItemData = null;
-                    UpdateUI();
+                   UpdateUI();
                 }
             }
             else if (ItemData is IUncountableItem uncountableItem)

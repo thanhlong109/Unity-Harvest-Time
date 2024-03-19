@@ -4658,6 +4658,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39d6564a2bd24ae44b95ca8aa27b6828, type: 2}
   - {fileID: 11400000, guid: 9ab4c7c825dcb59469e778963bef2c36, type: 2}
   - {fileID: 11400000, guid: 87c43d8072d7fed49b7958169c3d2033, type: 2}
+  - {fileID: 11400000, guid: cc8d3d86cbe38f24f9b233617423963c, type: 2}
+  - {fileID: 11400000, guid: ca4d4010c9c6f16428df8b24593fb5e2, type: 2}
+  - {fileID: 11400000, guid: ad3c2e765e4d9b74ead8b0dd9c06d957, type: 2}
+  - {fileID: 11400000, guid: 70e1e80a3d12ddb46a7917abddc0fd83, type: 2}
   handAnimator: {fileID: 52555855}
 --- !u!1001 &1224920960
 PrefabInstance:

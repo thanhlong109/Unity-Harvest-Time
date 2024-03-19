@@ -38,7 +38,7 @@ MonoBehaviour:
   sellPrice: 4
   buyPrice: 10
   timeBtwStages: 3
-  quantity: 73
+  quantity: 0
   plantName: Tomato Seed
   icon: {fileID: 21300000, guid: 5391391357ab4a943abe6adb408be0fa, type: 3}
   harvestedName: Tomato

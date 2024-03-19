@@ -34,7 +34,7 @@ MonoBehaviour:
   sellPrice: 4
   buyPrice: 10
   timeBtwStages: 3
-  quantity: 81
+  quantity: 0
   plantName: Carrot Seed
   icon: {fileID: 21300000, guid: af60efdbe0994c5499d28b6909b05d31, type: 3}
   harvestedName: Carrot
