@@ -31,6 +31,9 @@ public class Tools : ScriptableObject, IUncountableItem
     public int SellPrice { get => sellPrice; set => sellPrice = value; }
     public int BuyPrice { get => buyPrice; set => buyPrice = value; }
 
+    [Header("Initial Data")]
+    [SerializeField] private int initialAmount = 100;
+
     public IEnumerator WaitToActionDone()
     {
         yield return new WaitForSeconds(timeToCompleteAction);
@@ -49,6 +52,11 @@ public class Tools : ScriptableObject, IUncountableItem
         coppy.timeToCompleteAction = timeToCompleteAction;
         coppy.ToolType = ToolType;
         return coppy;
+    }
+
+    public void SetToInitialData()
+    {
+        _amounts = initialAmount;
     }
 }
 

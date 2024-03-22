@@ -7,7 +7,22 @@ public class JsonService : IDataService
 {
     public T LoadData<T>(string relativePath, bool encrypted)
     {
-        throw new System.NotImplementedException();
+        string path = Application.dataPath + relativePath;
+        if (!File.Exists(path))
+        {
+            Debug.LogError("data does not exist!");
+            throw new FileNotFoundException($"{path} does not exist!");
+        }
+        try
+        {
+            T data = JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
+            return data;
+        }catch (Exception ex)
+        {
+            Debug.LogError($"Failed to load data dua to: {ex.Message} {ex.StackTrace}");
+            throw ex;
+        }
+
     }
 
     public bool SaveData<T>(string relativePath, T data, bool encrypted)

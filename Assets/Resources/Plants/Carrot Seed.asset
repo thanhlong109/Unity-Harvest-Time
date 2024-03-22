@@ -32,10 +32,11 @@ MonoBehaviour:
   timeToHarvest: 60
   plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   sellPrice: 4
-  buyPrice: 10
+  buyPrice: 30
   timeBtwStages: 3
   quantity: 0
   plantName: Carrot Seed
   icon: {fileID: 21300000, guid: af60efdbe0994c5499d28b6909b05d31, type: 3}
-  harvestedName: Carrot
-  harvestedIcon: {fileID: 21300000, guid: 6288591c63e99b84988c3b7253dc856d, type: 3}
+  harvestedItem: {fileID: 11400000, guid: 3a54cdfae0ad1b8499862b08870cedb2, type: 2}
+  harvestedItemQuality: 1
+  initialQuality: 0

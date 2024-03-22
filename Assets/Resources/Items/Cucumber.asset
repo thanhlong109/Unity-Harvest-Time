@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81764a52c4c01e4dbf9ccba39f038ec, type: 3}
+  m_Name: Cucumber
+  m_EditorClassIdentifier: 
+  quantity: 0
+  _name: 'Cucumber '
+  icon: {fileID: 21300000, guid: 83f29f3809544a04ca53b3c025a0b235, type: 3}
+  sellPrice: 40
+  buyPrice: 60
+  initialQuality: 0

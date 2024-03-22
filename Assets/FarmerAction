@@ -1,0 +1,16 @@
+{
+  "FamerPosition": {
+    "x": 2.26555443,
+    "y": 7.266932,
+    "z": -1.08333075,
+    "normalized": {
+      "x": 0.2946639,
+      "y": 0.945156157,
+      "z": -0.14090082,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 7.688605,
+    "sqrMagnitude": 59.1146431
+  }
+}

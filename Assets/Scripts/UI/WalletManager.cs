@@ -1,3 +1,4 @@
+using Assets.Scripts.DataService;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,6 +22,10 @@ public class WalletManager : MonoBehaviour
 
     void Start()
     {
+        if (!ScreenPara.Instance.isContinue)
+        {
+            ManageData.instance.SaveData.SetToInitialData();
+        }
         wallet = ManageData.instance.SaveData.money;
         UpdateUI();
     }
@@ -32,17 +37,17 @@ public class WalletManager : MonoBehaviour
     }
 
 
-    public void SubtractMoney(int money)
+    public bool SubtractMoney(int money)
     {
-        if(wallet - money <= 0)
-        {
-            wallet = money;
-        }
-        else
+        
+        if(wallet - money >= 0)
         {
             wallet -= money;
+            UpdateUI();
+            return true;
         }
-        UpdateUI();
+        return false;
+        
     }
 
 

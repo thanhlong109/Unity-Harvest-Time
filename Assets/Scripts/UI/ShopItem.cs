@@ -28,19 +28,28 @@ public class ShopItem : MonoBehaviour
 
     public void OnBuyClick()
     {
-        
-        if(inventoryItem is Plant plant)
+        if(inventoryItem is ICountableItem countableItem)
         {
-            Plant item = (Plant) plant.Clone();
-            item.Quantity = 1;
-            Inventory.Instance.AddItem(item);
-        }else if(inventoryItem is CountableItem) {
-            CountableItem item = (CountableItem)inventoryItem;
-            item.Quantity = 1;
-            Inventory.Instance.AddItem(item);
+            if (WalletManager.Instance.SubtractMoney(countableItem.BuyPrice))
+            {
+                AudioManager.Instance.PlaySFX("CashSfx");
+                if (countableItem is Plant plant)
+                {
+                    Plant item = (Plant)plant.Clone();
+                    item.Quantity = 1;
+                    Inventory.Instance.AddItem(item);
+                }
+                else if (countableItem is CountableItem)
+                {
+                    CountableItem item = (CountableItem)inventoryItem;
+                    item.Quantity = 1;
+                    Inventory.Instance.AddItem(item);
+                }
+
+            }
+            
         }
-        WalletManager.Instance.SubtractMoney(inventoryItem.BuyPrice);
-        AudioManager.Instance.PlaySFX("CashSfx");
+        
     } 
 
     public void OnSellClick()

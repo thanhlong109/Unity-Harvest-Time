@@ -1,0 +1,36 @@
+{
+  "itemList": [
+    {
+      "name": "Hoe",
+      "hideFlags": 0
+    },
+    {
+      "name": "WateringCan",
+      "hideFlags": 0
+    },
+    {
+      "name": "Pumpkin Seed",
+      "hideFlags": 0
+    },
+    {
+      "name": "Corn Seed",
+      "hideFlags": 0
+    },
+    {
+      "name": "Carrot Seed",
+      "hideFlags": 0
+    },
+    {
+      "name": "Cucumber Seed",
+      "hideFlags": 0
+    },
+    {
+      "name": "Potato Seed",
+      "hideFlags": 0
+    },
+    {
+      "name": "Tomato Seed",
+      "hideFlags": 0
+    }
+  ]
+}

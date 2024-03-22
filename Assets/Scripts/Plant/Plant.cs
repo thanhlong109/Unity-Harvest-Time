@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Plant",menuName = "Item/Plant")]
 public class Plant : ScriptableObject, ICountableItem
 {
+    
     public Sprite[] planetStateSprites;
-
     [Header("Seed")]
     public float timeToHarvest = 60f;
     public Sprite plantDieSprite;
@@ -19,14 +19,17 @@ public class Plant : ScriptableObject, ICountableItem
     [SerializeField] private Sprite icon;
 
     [Header("Harvest")]
-    public string harvestedName;
-    public Sprite harvestedIcon;
+    public CountableItem harvestedItem;
+    public int harvestedItemQuality;
 
     public int Quantity { get => quantity ; set => quantity = value; }
     public string Name { get => plantName; set => plantName = value ; }
     public Sprite Icon { get => icon; set => icon = value; }
     public int SellPrice { get => sellPrice; set => sellPrice = value; }
     public int BuyPrice { get =>buyPrice; set => buyPrice = value; }
+
+    [Header("Initial Data")]
+    [SerializeField]private int initialQuality = 0;
 
     public IInventoryItem Clone()
     {
@@ -41,8 +44,21 @@ public class Plant : ScriptableObject, ICountableItem
         coppy.timeBtwStages = timeBtwStages;
         coppy.planetStateSprites = planetStateSprites;
         coppy.timeToHarvest = timeToHarvest;
-        coppy.harvestedName = harvestedName;
-        coppy.harvestedIcon = harvestedIcon;
+        coppy.harvestedItem = harvestedItem;
         return coppy;
     }
+
+    public void SetToInitialData()
+    {
+        quantity = initialQuality;
+    }
+
+    public IInventoryItem Harvest()
+    {
+        IInventoryItem harvestItem = harvestedItem.Clone();
+        harvestedItem.Quantity = harvestedItemQuality;
+       
+        return harvestItem;
+    }
+
 }
