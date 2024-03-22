@@ -77,7 +77,7 @@ public class ShopItem : MonoBehaviour
             }
             else
             {
-                ShopAction.Instance.RemoveOutShop(countableItem);
+                ShopAction.Instance.RemoveOutShop(this);
                 gameObject.SetActive(false);
             }
         }
@@ -87,5 +87,10 @@ public class ShopItem : MonoBehaviour
     {
         ScriptableObject = item as ScriptableObject;
         Start();
+    }
+
+    public IInventoryItem GetItemData()
+    {
+        return ScriptableObject as IInventoryItem;
     }
 }

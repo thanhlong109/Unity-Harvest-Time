@@ -34,7 +34,7 @@ public class Animal : MonoBehaviour
     private static int MOVE_AMIN = Animator.StringToHash("Move");
     private Animator animator;
     private int _currentDirection = 1;
-    [SerializeField] private CircleCollider2D circleCollider;
+    
 
     [Header("Status")]
     [SerializeField] private Sprite goodStatus;
@@ -43,6 +43,8 @@ public class Animal : MonoBehaviour
     [SerializeField] private SpriteRenderer statusRender;
     [SerializeField] private float maxTimeDisplayStatus;
     [SerializeField] private ScriptableObject feedName;
+    [SerializeField] private float wanderRadius = 17.11f;
+    [SerializeField] private Transform milestone;
 
     private bool isDisplayingStatus;
     private Action action = new Action();
@@ -256,7 +258,7 @@ public class Animal : MonoBehaviour
     {
         float waitTime = Random.Range(animalData.idleTime / 2, animalData.idleTime);
         yield return new WaitForSeconds(waitTime);
-        Vector3 randomDestination = GetRandomPosition(circleCollider.transform.position, circleCollider.radius);
+        Vector3 randomDestination = GetRandomPosition(milestone.position, wanderRadius);
         agent.SetDestination(randomDestination);
         SetState(AnimalState.MOVING);
     }

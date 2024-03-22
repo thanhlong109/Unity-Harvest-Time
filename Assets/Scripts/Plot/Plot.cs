@@ -203,7 +203,7 @@ public class Plot : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void BeingMouseClicked()
     {
         itemSelected = inventory.GetSelectedItem();
         _farmerOffsetTarget = farmerOffsetTarget;
@@ -240,7 +240,6 @@ public class Plot : MonoBehaviour
         action.targetPos = new Vector3(transform.position.x - _farmerOffsetTarget.x, transform.position.y - _farmerOffsetTarget.y, 0);
         _farmer.SetAction(action);
     }
-
 
 
     void Harvest()

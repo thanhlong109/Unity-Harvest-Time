@@ -53,12 +53,12 @@ public class Plant : ScriptableObject, ICountableItem
         quantity = initialQuality;
     }
 
-    public IInventoryItem Harvest()
+    public ICountableItem Harvest()
     {
         IInventoryItem harvestItem = harvestedItem.Clone();
         harvestedItem.Quantity = harvestedItemQuality;
        
-        return harvestItem;
+        return harvestItem as ICountableItem;
     }
 
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8481849978362196912}
   - component: {fileID: 5742670312817605488}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 635205592998302312}
   - component: {fileID: 2535222500267133998}
-  - component: {fileID: 5392581730441644171}
   - component: {fileID: 467566347421200808}
-  m_Layer: 5
+  - component: {fileID: 5157077998705138322}
+  m_Layer: 8
   m_Name: Plot
   m_TagString: Plot
   m_Icon: {fileID: 0}
@@ -171,7 +171,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5392581730441644171
+--- !u!114 &467566347421200808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391499897735243072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638f0c47c0a145646bc4bb231fb4323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmerOffsetTarget: {x: -1.5, y: -1}
+  isPlanted: 0
+  plant: {fileID: 5742670312817605488}
+  plantData: {fileID: 11400000, guid: 87c43d8072d7fed49b7958169c3d2033, type: 2}
+  plantState: 0
+  handAnimator: {fileID: 0}
+  timeToDry: 60
+  drySprite: {fileID: 886916335, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
+  wateredSprite: {fileID: 546231371, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
+  dryTilledSprite: {fileID: -815450045, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
+  wateredTilledSprite: {fileID: -1763133010, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
+  isDry: 1
+  timeBtwStageWithGrowRate: 0
+  instanceID: 0
+--- !u!61 &5157077998705138322
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,29 +242,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &467566347421200808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391499897735243072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 638f0c47c0a145646bc4bb231fb4323a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmerOffsetTarget: {x: -1.5, y: -1}
-  isPlanted: 0
-  plant: {fileID: 5742670312817605488}
-  plantData: {fileID: 11400000, guid: 87c43d8072d7fed49b7958169c3d2033, type: 2}
-  plantState: 0
-  handAnimator: {fileID: 0}
-  timeToDry: 60
-  drySprite: {fileID: 886916335, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
-  wateredSprite: {fileID: 546231371, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
-  dryTilledSprite: {fileID: -815450045, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
-  wateredTilledSprite: {fileID: -1763133010, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
-  isDry: 1
-  timeBtwStageWithGrowRate: 0
-  instanceID: 0

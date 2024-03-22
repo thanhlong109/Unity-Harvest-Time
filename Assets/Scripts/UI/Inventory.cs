@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject ItemPrefabs;
     [SerializeField] private ScriptableObject[] ItemData;
     [SerializeField] private Animator handAnimator;
-    private List<IInventoryItem> initialItems;
+    private IInventoryItem[] initialItems;
 
     private static int SELECT_WATERING_CAN = Animator.StringToHash("WateringCanSelected");
     private static int SELECT_HOE = Animator.StringToHash("HoeSelected");
@@ -41,18 +41,18 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //var plants = Resources.LoadAll(PLANT_SAVE_PATH, typeof(ScriptableObject));
-        //var items = Resources.LoadAll(ITEM_SAVE_PATH, typeof(ScriptableObject));
-        //var availableItems = ItemData;
-        //var list = new List<ScriptableObject>();
-        //list.AddRange(availableItems);
-        //list.AddRange(items);
-        //list.AddRange(plants);
-        //ItemData = list.ToArray();
-        
+        var plants = Resources.LoadAll(PLANT_SAVE_PATH, typeof(ScriptableObject));
+        var items = Resources.LoadAll(ITEM_SAVE_PATH, typeof(ScriptableObject));
+        var availableItems = ItemData;
+        var list = new List<ScriptableObject>();
+        list.AddRange(availableItems);
+        list.AddRange(items);
+        list.AddRange(plants);
+        ItemData = list.ToArray();
+
         if (ItemData != null)
         {
-            initialItems = Array.ConvertAll(ItemData, item => item as IInventoryItem).ToList();
+            initialItems = Array.ConvertAll(ItemData, item => item as IInventoryItem);
             if (!ScreenPara.Instance.isContinue)
             {
                 foreach (var item in initialItems)
@@ -60,7 +60,7 @@ public class Inventory : MonoBehaviour
                     item.SetToInitialData();
                 }
             }
-            AddRangeItem(initialItems.ToArray());
+            AddRangeItem(initialItems);
         }
     }
 
@@ -206,11 +206,14 @@ public class Inventory : MonoBehaviour
     {
         
         List<ICountableItem> items = new List<ICountableItem>();
-        foreach (IInventoryItem item in initialItems)
+        
+        foreach (InventoryItem item in inventoryUIItems)
         {
-            if(item is ICountableItem countable)
+            var dataItem =  item.GetItemData();
+            if ( dataItem!=null && dataItem is ICountableItem countable)
             {
                 items.Add(countable);
+                
             }
         }
         return items; 
