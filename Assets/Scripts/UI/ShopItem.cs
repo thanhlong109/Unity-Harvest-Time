@@ -1,3 +1,5 @@
+using Assets.Scripts.NPC;
+using Assets.Scripts.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,13 +24,13 @@ public class ShopItem : MonoBehaviour
     private IInventoryItem inventoryItem;
     void Start()
     {
-       UpdateUI();
-        
+        UpdateUI();
+
     }
 
     public void OnBuyClick()
     {
-        if(inventoryItem is ICountableItem countableItem)
+        if (inventoryItem is ICountableItem countableItem)
         {
             if (WalletManager.Instance.SubtractMoney(countableItem.BuyPrice))
             {
@@ -39,18 +41,28 @@ public class ShopItem : MonoBehaviour
                     item.Quantity = 1;
                     Inventory.Instance.AddItem(item);
                 }
-                else if (countableItem is CountableItem)
+                else if (countableItem is CountableItem )
                 {
-                    CountableItem item = (CountableItem)inventoryItem;
+                    CountableItem item = (CountableItem)inventoryItem.Clone();
                     item.Quantity = 1;
                     Inventory.Instance.AddItem(item);
+
+                }
+                else if (countableItem is PlotItem)
+                {
+
+                    PlotManager.Instance.OpenNewPlot();
+                    UpdateUI();
+                }else if(countableItem is AnimalItem animal)
+                {
+                    AnimalManager.Instance.CreateAnimal(animal.kind);
                 }
 
             }
-            
+
         }
-        
-    } 
+
+    }
 
     public void OnSellClick()
     {
@@ -70,15 +82,19 @@ public class ShopItem : MonoBehaviour
             ItemName.text = inventoryItem.Name;
 
         }
-        if(inventoryItem is ICountableItem countableItem && shopItemType == ShopItemType.SELL)
+        if (inventoryItem is ICountableItem countableItem && shopItemType == ShopItemType.SELL)
         {
-            if(countableItem.Quantity > 0) { 
-                gameObject.SetActive(true);
-            }
-            else
+            if (!(countableItem is PlotItem))
             {
-                ShopAction.Instance.RemoveOutShop(this);
-                gameObject.SetActive(false);
+                if (countableItem.Quantity > 0)
+                {
+                    gameObject.SetActive(true);
+                }
+                else
+                {
+                    ShopAction.Instance.RemoveOutShop(this);
+                    gameObject.SetActive(false);
+                }
             }
         }
     }

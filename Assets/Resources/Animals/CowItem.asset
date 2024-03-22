@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c81764a52c4c01e4dbf9ccba39f038ec, type: 3}
-  m_Name: SheepFeed
+  m_Script: {fileID: 11500000, guid: 15766248caf3af6419c282e0aab16b81, type: 3}
+  m_Name: CowItem
   m_EditorClassIdentifier: 
   quantity: 0
-  _name: Sheep Feed
-  icon: {fileID: 21300000, guid: b0a570b3cbab95d408c314a56f62fc22, type: 3}
-  sellPrice: 14
-  buyPrice: 28
+  _name: BabyCow
+  icon: {fileID: 1117053435, guid: b7daaec2cbfce7446b54a3379ae7c6f3, type: 3}
+  kind: 0
+  sellPrice: 600
+  buyPrice: 1500
   initialQuality: 0

@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1192736953
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -743915315, guid: 02b271968b7ef7244acce3eadef1ecd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 874927729
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 909316774, guid: 599dfaee3fc3e7e469c7d865a249ada7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -186,12 +186,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalData: {fileID: 11400000, guid: 0c934eb3cb7bd90489db32b21ed2566b, type: 2}
-  circleCollider: {fileID: 0}
   goodStatus: {fileID: -743915315, guid: 02b271968b7ef7244acce3eadef1ecd7, type: 3}
   hungryStatus: {fileID: 798749156, guid: 02b271968b7ef7244acce3eadef1ecd7, type: 3}
   badStatus: {fileID: 1886120795, guid: 02b271968b7ef7244acce3eadef1ecd7, type: 3}
   statusRender: {fileID: 4826234208890453849}
   maxTimeDisplayStatus: 5
+  feedName: {fileID: 0}
+  wanderRadius: 17.11
+  milestone: {fileID: 0}
   _farmerOffsetTarget: {x: -2, y: -1}
 --- !u!195 &4688786110825797243
 NavMeshAgent:

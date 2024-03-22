@@ -62,3 +62,6 @@ TagManager:
   - name: Farm
     uniqueID: 874927729
     locked: 0
+  - name: Emoje
+    uniqueID: 3102230343
+    locked: 0

@@ -28,7 +28,8 @@ public class Plot : MonoBehaviour
     [SerializeField] private Sprite wateredSprite;
     [SerializeField] private Sprite dryTilledSprite;
     [SerializeField] private Sprite wateredTilledSprite;
-    
+    [SerializeField] private bool isBought;
+
 
 
     [SerializeField]  private bool isDry = true;
@@ -39,6 +40,7 @@ public class Plot : MonoBehaviour
     private float growSpeed = 1f;
     [SerializeField] private float timeBtwStageWithGrowRate;
     private float tempGrowSpeed = 0f;
+    
 
     private SpriteRenderer plotSpriteRender;
     private FarmerAction _farmer;
@@ -211,7 +213,7 @@ public class Plot : MonoBehaviour
         if (itemSelected != null)
         {
             var itemSelectedData = itemSelected.GetItemData();
-
+         
             if (isPlanted && plantState == plantData.planetStateSprites.Length - 1)
             {
                 currentActionType = PlotActionType.HAVEST;
@@ -223,10 +225,15 @@ public class Plot : MonoBehaviour
             }
             else if (itemSelectedData is Tools)
             {
+                Debug.Log("tool");
                 currentActionType = PlotActionType.TOOLS_ACTION;
                 
                 toolSelected = itemSelectedData as Tools;
                 _farmerOffsetTarget = toolSelected.offset;
+            }
+            else
+            {
+                return;
             }
            
         }
@@ -283,16 +290,8 @@ public class Plot : MonoBehaviour
 
     private void UpdatePlotUI()
     {
-        if(isPlanted)
-        {
-            plant.gameObject.SetActive(true);
-            Debug.Log("true");
-        }
-        else
-        {
-            Debug.Log("false");
-            plant.gameObject.SetActive(false);
-        }
+        gameObject.SetActive(isBought);
+        plant.gameObject.SetActive(isPlanted);
         
         if (isTilled)
         {
@@ -306,6 +305,7 @@ public class Plot : MonoBehaviour
         {
             CalTimeGrowWithGrowRate();
         }
+       
     }
 
     private void UpdatePlant()
@@ -336,6 +336,7 @@ public class Plot : MonoBehaviour
 
     public PlotState GetPlotSate()
     {
+   
         return new PlotState()
         {
             growSpeed = growSpeed,
@@ -347,8 +348,16 @@ public class Plot : MonoBehaviour
             plotId = instanceID,
             isPlantDie = isPlantDie,
             isDry = isDry,
-            
+            isBought = isBought,
         };
+        
+
+    }
+
+    public void SetIsBought()
+    {
+        isBought = true;
+        gameObject.SetActive(true);
     }
 
     public void LoadPlotState(PlotState plotState)
@@ -357,6 +366,8 @@ public class Plot : MonoBehaviour
         isPlanted = plotState.isPlanted;
         isTilled= plotState.isTilled;
         isDry = plotState.isDry;
+        isBought= plotState.isBought;
+        gameObject.SetActive(isBought);
         if (isPlanted)
         {
             plantData = (Plant)Inventory.Instance.GetItemByName(plotState.plantName);

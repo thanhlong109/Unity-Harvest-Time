@@ -82,6 +82,7 @@ public class InventoryItem : MonoBehaviour
                 {
                     gameObject.SetActive(true);
                 }
+                
             }
             else if (ItemData is IUncountableItem uncountableItem)
             {
@@ -131,13 +132,16 @@ public class InventoryItem : MonoBehaviour
         {
             if (ItemData is ICountableItem countableItem)
             {
-
-                countableItem.Quantity -= amount;
-                if (countableItem.Quantity <= 0)
+                if (countableItem.Quantity >= amount)
                 {
-                    icon.gameObject.SetActive(false);
-                   UpdateUI();
+                    countableItem.Quantity -= amount;
+                    if (countableItem.Quantity <= 0)
+                    {
+                        icon.gameObject.SetActive(false);
+                        UpdateUI();
+                    }
                 }
+
             }
             else if (ItemData is IUncountableItem uncountableItem)
             {

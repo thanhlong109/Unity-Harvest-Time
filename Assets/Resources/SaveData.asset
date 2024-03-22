@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SaveData
   m_EditorClassIdentifier: 
   money: 20
-  famerPosition: {fileID: 0}
+  initialMoney: 10000

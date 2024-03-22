@@ -9,6 +9,11 @@ public enum AnimalType
     ADULT
 }
 
+public enum AnimalKind
+{
+    COW,CKICKEN,SHEEP
+}
+
 
 [CreateAssetMenu(fileName ="New Animal",menuName ="NPC/Animal")]
 public class AnimalData : ScriptableObject
@@ -19,6 +24,7 @@ public class AnimalData : ScriptableObject
     public int health = 100;
     public int hungryAmount = 0;
     public int amountHealthDecreaseWhenHungry;
+    public AnimalKind kind;
 
 
     [Header("Sound")]

@@ -1,70 +1,16 @@
 {
   "PlotStates": {
-    "13": {
+    "0": {
       "isTilled": false,
       "growSpeed": 1.0,
       "timeBtwStageWithGrowRate": 0.0,
       "isPlanted": false,
       "plantName": "Corn Seed",
       "plantState": 0,
-      "plotId": 13,
+      "plotId": 0,
       "isPlantDie": false,
-      "isDry": true
-    },
-    "14": {
-      "isTilled": false,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 0.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 14,
-      "isPlantDie": false,
-      "isDry": true
-    },
-    "2": {
-      "isTilled": false,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 0.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 2,
-      "isPlantDie": false,
-      "isDry": true
-    },
-    "6": {
-      "isTilled": false,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 0.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 6,
-      "isPlantDie": false,
-      "isDry": true
-    },
-    "12": {
-      "isTilled": false,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 0.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 12,
-      "isPlantDie": false,
-      "isDry": true
-    },
-    "8": {
-      "isTilled": false,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 0.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 8,
-      "isPlantDie": false,
-      "isDry": true
+      "isDry": true,
+      "isBought": true
     },
     "1": {
       "isTilled": false,
@@ -75,40 +21,20 @@
       "plantState": 0,
       "plotId": 1,
       "isPlantDie": false,
-      "isDry": true
+      "isDry": true,
+      "isBought": true
     },
-    "10": {
+    "2": {
       "isTilled": false,
       "growSpeed": 1.0,
       "timeBtwStageWithGrowRate": 0.0,
       "isPlanted": false,
       "plantName": "Corn Seed",
       "plantState": 0,
-      "plotId": 10,
+      "plotId": 2,
       "isPlantDie": false,
-      "isDry": true
-    },
-    "5": {
-      "isTilled": false,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 0.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 5,
-      "isPlantDie": false,
-      "isDry": true
-    },
-    "0": {
-      "isTilled": true,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 3.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 0,
-      "isPlantDie": false,
-      "isDry": true
+      "isDry": true,
+      "isBought": true
     },
     "3": {
       "isTilled": false,
@@ -119,18 +45,8 @@
       "plantState": 0,
       "plotId": 3,
       "isPlantDie": false,
-      "isDry": true
-    },
-    "11": {
-      "isTilled": false,
-      "growSpeed": 1.0,
-      "timeBtwStageWithGrowRate": 0.0,
-      "isPlanted": false,
-      "plantName": "Corn Seed",
-      "plantState": 0,
-      "plotId": 11,
-      "isPlantDie": false,
-      "isDry": true
+      "isDry": true,
+      "isBought": true
     },
     "4": {
       "isTilled": false,
@@ -141,7 +57,20 @@
       "plantState": 0,
       "plotId": 4,
       "isPlantDie": false,
-      "isDry": true
+      "isDry": true,
+      "isBought": true
+    },
+    "8": {
+      "isTilled": false,
+      "growSpeed": 1.0,
+      "timeBtwStageWithGrowRate": 0.0,
+      "isPlanted": false,
+      "plantName": "Corn Seed",
+      "plantState": 0,
+      "plotId": 8,
+      "isPlantDie": false,
+      "isDry": true,
+      "isBought": true
     },
     "9": {
       "isTilled": false,
@@ -152,18 +81,32 @@
       "plantState": 0,
       "plotId": 9,
       "isPlantDie": false,
-      "isDry": true
+      "isDry": true,
+      "isBought": true
     },
-    "7": {
+    "10": {
       "isTilled": false,
       "growSpeed": 1.0,
       "timeBtwStageWithGrowRate": 0.0,
       "isPlanted": false,
       "plantName": "Corn Seed",
       "plantState": 0,
-      "plotId": 7,
+      "plotId": 10,
       "isPlantDie": false,
-      "isDry": true
+      "isDry": true,
+      "isBought": true
+    },
+    "11": {
+      "isTilled": false,
+      "growSpeed": 1.0,
+      "timeBtwStageWithGrowRate": 0.0,
+      "isPlanted": false,
+      "plantName": "Corn Seed",
+      "plantState": 0,
+      "plotId": 11,
+      "isPlantDie": false,
+      "isDry": true,
+      "isBought": true
     }
   }
 }

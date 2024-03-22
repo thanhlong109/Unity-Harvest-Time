@@ -72,8 +72,8 @@ public class FarmerAction : MonoBehaviour
             _agent.SetDestination(_posTarget.Value);
             _posTarget = null;
         }
-        Flip();
-        UpdateAnimation();
+        
+        
         if(_action != null && isActionAble)
         {
 
@@ -91,6 +91,12 @@ public class FarmerAction : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        Flip();
+        UpdateAnimation();
+    }
+
 
     void UpdateAnimation()
     {
@@ -99,7 +105,7 @@ public class FarmerAction : MonoBehaviour
 
     void Flip()
     {
-        if (_agent.remainingDistance>0 && _agent.velocity.x * _currentDirection < 0)
+        if (_agent.remainingDistance>0 && Mathf.Abs(_agent.velocity.x) > 0.1f && _agent.velocity.x * _currentDirection < 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             _currentDirection *= -1;

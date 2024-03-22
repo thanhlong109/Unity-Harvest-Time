@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class ManageData : MonoBehaviour
 {
-    public SaveData SaveData;
+    //public SaveData SaveData;
 
     public static ManageData instance;
 
@@ -23,14 +23,14 @@ public class ManageData : MonoBehaviour
         }
     }
 
-    private void Start()
+    /*private void Start()
     {
         jsonService = new  JsonService();
         try
         {
             if (ScreenPara.Instance.isContinue)
             {
-                Plot[] plotList = FindObjectsOfType<Plot>();
+                Plot[] plotList = FindObjectsOfType<Plot>(true);
                 var data = jsonService.LoadData<SavedData>(SavePath, false);
                 foreach (var item in plotList)
                 {
@@ -40,7 +40,9 @@ public class ManageData : MonoBehaviour
                         item.LoadPlotState(plotStateData);
                     }
                 }
+                
             }
+            PlotManager.Instance.FetchPlot();
         }
         catch (Exception e)
         {
@@ -68,12 +70,10 @@ public class ManageData : MonoBehaviour
     private void OnApplicationQuit()
     {
         SavePlotState();
-    }
+    }*/
 
 
 }
 
-public class SavedData {
-    public Dictionary<int, PlotState> PlotStates;
-}
+
 

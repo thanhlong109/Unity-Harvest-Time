@@ -7,9 +7,8 @@ using UnityEngine;
 public class WalletManager : MonoBehaviour
 {
     public static WalletManager Instance;
-    [SerializeField] private int firstGive = 50;
     [SerializeField] private TextMeshProUGUI WalletText;
-
+    [SerializeField] private SaveData saveData;
     private int wallet = 0;
 
     private void Awake()
@@ -24,9 +23,9 @@ public class WalletManager : MonoBehaviour
     {
         if (!ScreenPara.Instance.isContinue)
         {
-            ManageData.instance.SaveData.SetToInitialData();
+           saveData.SetToInitialData();
         }
-        wallet = ManageData.instance.SaveData.money;
+        wallet = saveData.money;
         UpdateUI();
     }
 
@@ -58,6 +57,6 @@ public class WalletManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        ManageData.instance.SaveData.money = wallet;
+        saveData.money = wallet;
     }
 }
