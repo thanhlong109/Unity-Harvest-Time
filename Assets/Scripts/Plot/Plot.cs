@@ -29,7 +29,7 @@ public class Plot : MonoBehaviour
     [SerializeField] private Sprite dryTilledSprite;
     [SerializeField] private Sprite wateredTilledSprite;
     [SerializeField] private bool isBought;
-
+    [SerializeField] private float dryTime=0;
 
 
     [SerializeField]  private bool isDry = true;
@@ -92,8 +92,7 @@ public class Plot : MonoBehaviour
                 }
             case PlotActionType.TOOLS_ACTION:
                 {
-                   
-                    
+
                     ResetToolsAnimation();
                     switch (toolSelected.ToolType)
                     {
@@ -167,6 +166,7 @@ public class Plot : MonoBehaviour
         if (isDry)
         {
             isDry = false;
+            dryTime = 0;
             growSpeed += 0.5f;
             StartCoroutine(CountToNextDry());
             UpdatePlotUI();
@@ -179,29 +179,38 @@ public class Plot : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToDry);
         isDry = true;
+        growSpeed = 1f;
         UpdatePlotUI();
 
     }
 
     void Update()
     {
-        if (isPlanted)
+        if (isPlanted && !isPlantDie)
         {
             Grow();
         }
-
-
     }
 
     void Grow()
     {
 
         timer -= Time.deltaTime;
+       
         if (timer < 0 && plantState < plantData.planetStateSprites.Length - 1)
         {
             timer = timeBtwStageWithGrowRate;
             plantState++;
             UpdatePlant();
+        }
+        if (isDry)
+        {
+            dryTime += Time.deltaTime;
+            if (dryTime > plantData.liveInDryTime)
+            {
+                isPlantDie = true;
+                UpdatePlant() ;
+            }
         }
     }
 
@@ -214,20 +223,18 @@ public class Plot : MonoBehaviour
         {
             var itemSelectedData = itemSelected.GetItemData();
          
-            if (isPlanted && plantState == plantData.planetStateSprites.Length - 1)
+            if (isPlanted && plantState == plantData.planetStateSprites.Length - 1||isPlantDie)
             {
                 currentActionType = PlotActionType.HAVEST;
             }else
-            if (itemSelectedData is Plant)
+            if (itemSelectedData is Plant && !isPlanted)
             {
                 plantData = itemSelected.GetItemData() as Plant;
                 currentActionType = PlotActionType.PLANT;
             }
             else if (itemSelectedData is Tools)
             {
-                Debug.Log("tool");
                 currentActionType = PlotActionType.TOOLS_ACTION;
-                
                 toolSelected = itemSelectedData as Tools;
                 _farmerOffsetTarget = toolSelected.offset;
             }
@@ -251,7 +258,7 @@ public class Plot : MonoBehaviour
 
     void Harvest()
     {
-        if (plantState == plantData.planetStateSprites.Length - 1)
+        if (plantState == plantData.planetStateSprites.Length - 1||isPlantDie)
         {
             ResetPlot();
             UpdatePlotUI();
@@ -273,6 +280,7 @@ public class Plot : MonoBehaviour
         tempGrowSpeed = 0f;
         rateToDie = 0;
         isPlantDie = false;
+        dryTime = 0f;
     }
 
     void Plant()
@@ -311,6 +319,7 @@ public class Plot : MonoBehaviour
     private void UpdatePlant()
     {
         plant.sprite = plantData.planetStateSprites[plantState];
+        plant.color = isPlantDie ? Color.black : Color.white;
        /* var randomValue = Random.Range(0, 100);
         if(randomValue < rateToDie)
         {

@@ -18,9 +18,10 @@ MonoBehaviour:
   health: 100
   hungryAmount: 0
   amountHealthDecreaseWhenHungry: 5
+  kind: 0
   hungrySoundSFXName: 
   idleSoundSFXName: 
-  feedSoundSFXName: 
+  feedSoundSFXName: CowSfx
   walkSpeed: 1.4
   maxWalkTime: 12
   idleTime: 20

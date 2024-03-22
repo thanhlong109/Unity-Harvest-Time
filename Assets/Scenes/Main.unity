@@ -1799,7 +1799,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.71875
+  orthographic size: 8.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2174,7 +2174,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2139280738}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.2564648
+  m_Size: 0.25646478
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6702,50 +6702,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 635205592998302312, guid: 420725efb88d197479e2ed689b84c93f, type: 3}
   m_PrefabInstance: {fileID: 1595110153}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1627116337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1627116339}
-  - component: {fileID: 1627116338}
-  m_Layer: 0
-  m_Name: ManageData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1627116338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627116337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c0c3aefb948ba45bcd121839cc5cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1627116339
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627116337}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4180965, y: 2.324493, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1683141914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7384,7 +7340,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 651740055}
   m_HandleRect: {fileID: 651740054}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -65350,7 +65306,6 @@ SceneRoots:
   - {fileID: 7426078468851679973}
   - {fileID: 3365001672240448968}
   - {fileID: 1556840812646838775}
-  - {fileID: 1627116339}
   - {fileID: 1221793585}
   - {fileID: 813761421}
   - {fileID: 1527851599}
