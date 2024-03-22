@@ -1,7 +1,9 @@
+using Assets.Scripts.DataService;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class FarmerAction : MonoBehaviour
 {
@@ -20,6 +22,8 @@ public class FarmerAction : MonoBehaviour
     private Action _action = null;
     public Animator handAnimator;
     public bool isActionAble = true;
+    public static string SAVE_FILE_NAME = "/FarmerAction";
+    private JsonService _jsonService;
 
     
     private void Awake()
@@ -39,10 +43,18 @@ public class FarmerAction : MonoBehaviour
 
     void Start()
     {
+        
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
         AudioManager.Instance.PlayMusic("bgmScreenMain");
-        
+        _jsonService = new JsonService();
+        if (ScreenPara.Instance.isContinue)
+        {
+            var savedData = _jsonService.LoadData<FamerActionSavedData>(SAVE_FILE_NAME, false);
+            gameObject.transform.position = savedData.FamerPosition;
+        }
+
+
     }
 
 
@@ -106,5 +118,19 @@ public class FarmerAction : MonoBehaviour
             _action = action;
     }
 
+    private void OnApplicationQuit()
+    {
+        FamerActionSavedData data = new FamerActionSavedData()
+        {
+            FamerPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z),
+        };
+        _jsonService.SaveData(SAVE_FILE_NAME, data,false);
+    }
+
+}
+
+public class FamerActionSavedData
+{
+    public Vector3 FamerPosition { get; set; } 
 
 }

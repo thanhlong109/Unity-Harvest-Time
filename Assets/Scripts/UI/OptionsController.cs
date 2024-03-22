@@ -89,4 +89,9 @@ public class OptionsController : MonoBehaviour
     {
         SceneManager.LoadScene(screenId);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

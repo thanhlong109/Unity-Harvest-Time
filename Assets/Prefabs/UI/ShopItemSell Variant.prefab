@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopItemSell Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2678937489549284005, guid: 9cc1a11708a4aac42857ed86c70b19ff, type: 3}
+      propertyPath: m_TagString
+      value: ShopSellItem
+      objectReference: {fileID: 0}
     - target: {fileID: 3132767907433718168, guid: 9cc1a11708a4aac42857ed86c70b19ff, type: 3}
       propertyPath: m_text
       value: Sell
@@ -107,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 3651801997690958723, guid: 9cc1a11708a4aac42857ed86c70b19ff, type: 3}
       propertyPath: ScriptableObject
       value: 
-      objectReference: {fileID: 11400000, guid: 1ec0945221508604db04cbfa76b1ee27, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4758583209181523823, guid: 9cc1a11708a4aac42857ed86c70b19ff, type: 3}
       propertyPath: m_Name
       value: SellBtn

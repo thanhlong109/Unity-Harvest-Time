@@ -1,3 +1,4 @@
+using Assets.Scripts.DataService;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,19 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame()
-    {
+    { 
+        ScreenPara.Instance.isContinue = false;
         SceneManager.LoadScene(1);
+       
     }
+
+    public void ContinueGame()
+    {
+        ScreenPara.Instance.isContinue = true;
+        SceneManager.LoadScene(1);
+
+    }
+
 
     public void QuitGame()
     {

@@ -1,7 +1,9 @@
+using Assets.Scripts.DataService;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
@@ -18,11 +20,14 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject ItemPrefabs;
     [SerializeField] private ScriptableObject[] ItemData;
     [SerializeField] private Animator handAnimator;
+    private IInventoryItem[] initialItems;
 
     private static int SELECT_WATERING_CAN = Animator.StringToHash("WateringCanSelected");
     private static int SELECT_HOE = Animator.StringToHash("HoeSelected");
     private static int SELECT_AXE = Animator.StringToHash("AxeSelected");
     private static int SELECT_PICKAXE = Animator.StringToHash("PickaxeSelected");
+    private static string PLANT_SAVE_PATH = "Plants";
+    private static string ITEM_SAVE_PATH = "Items";
 
 
     private void Awake()
@@ -35,15 +40,35 @@ public class Inventory : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        var plants = Resources.LoadAll(PLANT_SAVE_PATH, typeof(ScriptableObject));
+        var items = Resources.LoadAll(ITEM_SAVE_PATH, typeof(ScriptableObject));
+        var availableItems = ItemData;
+        var list = new List<ScriptableObject>();
+        list.AddRange(availableItems);
+        list.AddRange(items);
+        list.AddRange(plants);
+        ItemData = list.ToArray();
+
+        if (ItemData != null)
+        {
+            initialItems = Array.ConvertAll(ItemData, item => item as IInventoryItem);
+            if (!ScreenPara.Instance.isContinue)
+            {
+                foreach (var item in initialItems)
+                {
+                    item.SetToInitialData();
+                }
+            }
+            AddRangeItem(initialItems);
+        }
     }
 
     void Start()
     {
-        if (ItemData != null)
-        {
-            IInventoryItem[] inventoryItem = Array.ConvertAll(ItemData, item => item as IInventoryItem);
-            AddRangeItem(inventoryItem);
-        }
+      
+        
+        
     }
 
     private void ResetAnimator()
@@ -157,6 +182,7 @@ public class Inventory : MonoBehaviour
         inventoryItem.SetItemData(item);
         newObject.transform.SetParent(transform, false);
         inventoryUIItems.Add(inventoryItem);
+       
     }
 
 
@@ -178,13 +204,23 @@ public class Inventory : MonoBehaviour
 
     public List<ICountableItem> GetAllCountableItem()
     {
+        
         List<ICountableItem> items = new List<ICountableItem>();
-        var filteredList = inventoryUIItems.Where(x => x.GetItemData() != null && x.GetItemData() is ICountableItem);
-        foreach(InventoryItem i in filteredList)
+        
+        foreach (InventoryItem item in inventoryUIItems)
         {
-            var x = i.GetItemData() as ICountableItem;
-            items.Add(x);
+            var dataItem =  item.GetItemData();
+            if ( dataItem!=null && dataItem is ICountableItem countable)
+            {
+                items.Add(countable);
+                
+            }
         }
-        return items;
+        return items; 
+    }
+
+    public IInventoryItem GetItemByName(string name)
+    {
+        return initialItems.Where(c => c.Name == name).FirstOrDefault().Clone();
     }
 }

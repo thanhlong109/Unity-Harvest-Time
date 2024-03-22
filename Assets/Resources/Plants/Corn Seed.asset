@@ -38,8 +38,9 @@ MonoBehaviour:
   sellPrice: 4
   buyPrice: 10
   timeBtwStages: 3
-  quantity: 81
+  quantity: 0
   plantName: Corn Seed
   icon: {fileID: 21300000, guid: d0bc1afa7f05fa746a772d29127695f0, type: 3}
-  harvestedName: Corn
-  harvestedIcon: {fileID: 21300000, guid: 790018486c2e7114ea9fc2268ecc31f6, type: 3}
+  harvestedItem: {fileID: 11400000, guid: 33d6fab7946402d4ca1e4e76a57abf15, type: 2}
+  harvestedItemQuality: 3
+  initialQuality: 5

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - HandTools
+  - Plot
+  - ShopSellItem
   layers:
   - Default
   - TransparentFX
@@ -44,6 +46,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ClickAble
+    uniqueID: 2197117839
     locked: 0
   - name: Farmer
     uniqueID: 3703943731

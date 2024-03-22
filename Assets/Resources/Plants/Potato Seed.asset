@@ -23,10 +23,11 @@ MonoBehaviour:
   timeToHarvest: 60
   plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   sellPrice: 4
-  buyPrice: 10
+  buyPrice: 50
   timeBtwStages: 3
   quantity: 0
   plantName: Potato Seed
   icon: {fileID: 21300000, guid: c8dbba2847e225344bf7206c6f89eac4, type: 3}
-  harvestedName: Potato
-  harvestedIcon: {fileID: 21300000, guid: eb993ca7329a1d749830a716a4e323bd, type: 3}
+  harvestedItem: {fileID: 11400000, guid: 9ab1828a86b7b1548a38ac92394f26e9, type: 2}
+  harvestedItemQuality: 3
+  initialQuality: 0

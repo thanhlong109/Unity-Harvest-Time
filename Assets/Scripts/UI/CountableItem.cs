@@ -17,6 +17,9 @@ public class CountableItem : ScriptableObject, ICountableItem
     public int SellPrice { get => sellPrice; set => sellPrice = value; }
     public int BuyPrice { get => buyPrice; set => buyPrice = value; }
 
+    [Header("Initial Data")]
+    [SerializeField]private int initialQuality = 0;
+
     public IInventoryItem Clone()
     {
         CountableItem coppy = ScriptableObject.CreateInstance<CountableItem>();
@@ -27,6 +30,11 @@ public class CountableItem : ScriptableObject, ICountableItem
         coppy.SellPrice = sellPrice;
         coppy.BuyPrice = buyPrice;
         return coppy;
+    }
+
+    public void SetToInitialData()
+    {
+        quantity = initialQuality;
     }
 }
 

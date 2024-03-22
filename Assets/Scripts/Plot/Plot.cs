@@ -1,3 +1,6 @@
+using Assets.Scripts.DataService;
+using Assets.Scripts.Plot;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +28,7 @@ public class Plot : MonoBehaviour
     [SerializeField] private Sprite wateredSprite;
     [SerializeField] private Sprite dryTilledSprite;
     [SerializeField] private Sprite wateredTilledSprite;
+    
 
 
     [SerializeField]  private bool isDry = true;
@@ -41,7 +45,8 @@ public class Plot : MonoBehaviour
     private Action action;
     private InventoryItem itemSelected;
     private Tools toolSelected;
-    
+
+    public int instanceID;
 
     private PlotActionType currentActionType;
 
@@ -52,13 +57,13 @@ public class Plot : MonoBehaviour
 
     private void Awake()
     {
-        _farmer = FindObjectOfType<FarmerAction>();
-        inventory = FindObjectOfType<Inventory>();
         plotSpriteRender = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
+        _farmer = FarmerAction.Instance;
+        inventory = Inventory.Instance;
         handAnimator = _farmer.handAnimator;
         action = new Action()
         {
@@ -66,6 +71,7 @@ public class Plot : MonoBehaviour
             targetPos = new Vector3(transform.position.x - _farmerOffsetTarget.x, transform.position.y - _farmerOffsetTarget.y, 0),
         };
         action.OnActionPerform += PerformAction;
+       
     }
 
     private void PerformAction()
@@ -197,7 +203,7 @@ public class Plot : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void BeingMouseClicked()
     {
         itemSelected = inventory.GetSelectedItem();
         _farmerOffsetTarget = farmerOffsetTarget;
@@ -236,7 +242,6 @@ public class Plot : MonoBehaviour
     }
 
 
-
     void Harvest()
     {
         if (plantState == plantData.planetStateSprites.Length - 1)
@@ -245,13 +250,7 @@ public class Plot : MonoBehaviour
             UpdatePlotUI();
             if (!isPlantDie)
             {
-                CountableItem harvestItem =ScriptableObject.CreateInstance<CountableItem>();
-                harvestItem.Icon = plantData.harvestedIcon;
-                harvestItem.Name = plantData.harvestedName;
-                harvestItem.Quantity = 4;
-                harvestItem.BuyPrice = plantData.BuyPrice * 3;
-                harvestItem.SellPrice = plantData.SellPrice * 3;
-                inventory.AddItem(harvestItem);
+                inventory.AddItem(plantData.Harvest());
             }
            
         }
@@ -279,11 +278,21 @@ public class Plot : MonoBehaviour
         UpdatePlotUI();
         UpdatePlant();
         timer = timeBtwStageWithGrowRate;
-        plant.gameObject.SetActive(true);
+        
     }
 
     private void UpdatePlotUI()
     {
+        if(isPlanted)
+        {
+            plant.gameObject.SetActive(true);
+            Debug.Log("true");
+        }
+        else
+        {
+            Debug.Log("false");
+            plant.gameObject.SetActive(false);
+        }
         
         if (isTilled)
         {
@@ -323,6 +332,43 @@ public class Plot : MonoBehaviour
     {
         timeBtwStageWithGrowRate = (plantData.timeToHarvest - ((growSpeed - 1) * plantData.timeToHarvest)) / plantData.planetStateSprites.Length;
     }
+    
 
+    public PlotState GetPlotSate()
+    {
+        return new PlotState()
+        {
+            growSpeed = growSpeed,
+            isPlanted = isPlanted,
+            isTilled = isTilled,
+            plantName = plantData.Name,
+            plantState = plantState,
+            timeBtwStageWithGrowRate = timeBtwStageWithGrowRate,
+            plotId = instanceID,
+            isPlantDie = isPlantDie,
+            isDry = isDry,
+            
+        };
+    }
 
+    public void LoadPlotState(PlotState plotState)
+    {
+        growSpeed = plotState.growSpeed;
+        isPlanted = plotState.isPlanted;
+        isTilled= plotState.isTilled;
+        isDry = plotState.isDry;
+        if (isPlanted)
+        {
+            plantData = (Plant)Inventory.Instance.GetItemByName(plotState.plantName);
+            plantState = plotState.plantState;
+            isPlantDie = plotState.isPlantDie;
+            timeBtwStageWithGrowRate = plotState.timeBtwStageWithGrowRate;
+        }
+        if(!isDry)
+        {
+            StartCoroutine(CountToNextDry());
+        }
+        UpdatePlotUI();
+        UpdatePlant();
+    }
 }
