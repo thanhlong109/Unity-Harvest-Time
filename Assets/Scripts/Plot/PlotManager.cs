@@ -17,7 +17,7 @@ public class PlotManager : MonoBehaviour
     [SerializeField] private PlotItem plotData;
 
     private JsonService jsonService;
-    private static string SavePath = "/GeneralData";
+    private static string SavePath = "/PlotData";
 
     [Header("Price")]
     [SerializeField] private int startPlotPrice;

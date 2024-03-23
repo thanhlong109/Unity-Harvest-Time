@@ -193,7 +193,7 @@ MonoBehaviour:
   maxTimeDisplayStatus: 5
   feedName: {fileID: 0}
   wanderRadius: 17.11
-  milestone: {fileID: 0}
+  animalKind: 1
   _farmerOffsetTarget: {x: -2, y: -1}
 --- !u!195 &4688786110825797243
 NavMeshAgent:

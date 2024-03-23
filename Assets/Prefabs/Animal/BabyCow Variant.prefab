@@ -61,6 +61,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3f0900fd0564c2543bb875c5b1fc3cbd, type: 2}
     - target: {fileID: 6014915777790163995, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
+      propertyPath: animalKind
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014915777790163995, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: maxTimeDisplayStatus
       value: 8
       objectReference: {fileID: 0}

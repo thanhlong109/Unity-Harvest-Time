@@ -1,3 +1,4 @@
+using Assets.Scripts.NPC;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,6 +45,7 @@ public class Animal : MonoBehaviour
     [SerializeField] private float maxTimeDisplayStatus;
     [SerializeField] private ScriptableObject feedName;
     [SerializeField] private float wanderRadius = 17.11f;
+    [SerializeField] private AnimalKind animalKind;
 
 
     private bool isDisplayingStatus;
@@ -301,5 +303,21 @@ public class Animal : MonoBehaviour
     private void OnMouseDown()
     {
         FarmerAction.Instance.SetAction(action);
+    }
+
+    public AnimaStats GetAnimalStats()
+    {
+        return new AnimaStats()
+        {
+          kind = animalKind,
+          position = transform.position,
+           
+        };
+    }
+
+    public void LoadStats(AnimaStats stats)
+    {
+        gameObject.transform.position = stats.position;
+        
     }
 }
