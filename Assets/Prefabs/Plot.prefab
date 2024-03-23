@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1178078820, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d208667fab3fd054ab0fc4e235e397a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -194,6 +194,10 @@ MonoBehaviour:
   wateredSprite: {fileID: 546231371, guid: 31b54f720681c9a499cf07b529317cf3, type: 3}
   dryTilledSprite: {fileID: -815450045, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
   wateredTilledSprite: {fileID: -1763133010, guid: b8263a4070c0cc441a1aced5195314bc, type: 3}
+  isBought: 0
+  dieColor: {r: 0, g: 0, b: 0, a: 0}
+  liveColor: {r: 1, g: 1, b: 1, a: 0}
+  dryRate: 0
   isDry: 1
   timeBtwStageWithGrowRate: 0
   instanceID: 0

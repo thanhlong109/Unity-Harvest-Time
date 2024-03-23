@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5137261610107432332
+--- !u!1001 &321225375100706687
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1582614587393013796, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1362185
+      value: 2.86
       objectReference: {fileID: 0}
     - target: {fileID: 1582614587393013796, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: -2.68
       objectReference: {fileID: 0}
     - target: {fileID: 1582614587393013796, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51,62 +51,42 @@ PrefabInstance:
     - target: {fileID: 4206042112101572016, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 414b7ca9cf693b6499908023f7eb80e6, type: 2}
-    - target: {fileID: 4688786110825797243, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: m_Height
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688786110825797243, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: m_Radius
-      value: 0.76
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: df38e14340664074081ec1e5383dde7b, type: 2}
     - target: {fileID: 6014915777790163995, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: feedName
       value: 
-      objectReference: {fileID: 11400000, guid: 5d147e0a92ee0a944b607609c3829113, type: 2}
+      objectReference: {fileID: 11400000, guid: a3c491117a185c54a94f0f7a9f1be875, type: 2}
     - target: {fileID: 6014915777790163995, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: animalData
       value: 
-      objectReference: {fileID: 11400000, guid: e83c7b322b3d550488547069e36036a6, type: 2}
+      objectReference: {fileID: 11400000, guid: 3f0900fd0564c2543bb875c5b1fc3cbd, type: 2}
     - target: {fileID: 6014915777790163995, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: animalKind
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6014915777790163995, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: maxTimeDisplayStatus
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 6014915777790163995, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: _farmerOffsetTarget.x
-      value: -2.3
+    - target: {fileID: 6659265669103926569, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659265669103926569, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 7180565881325488624, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1254262926, guid: 800880f3740f7aa469288022e54028ca, type: 3}
+      objectReference: {fileID: 1117053435, guid: b7daaec2cbfce7446b54a3379ae7c6f3, type: 3}
+    - target: {fileID: 7438613014182349333, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7651618670421137125, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
       propertyPath: m_Name
-      value: BabySheep Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983398395704057246, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: m_Size.x
-      value: 1.4849347
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983398395704057246, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: m_Size.y
-      value: 0.89685607
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983398395704057246, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.006317675
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983398395704057246, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.55157197
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983398395704057246, guid: 50bc47f66aa9d344ea460bf38d0f2268, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+      value: BabyCow Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

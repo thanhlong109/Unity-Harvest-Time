@@ -13,6 +13,7 @@ public class Plant : ScriptableObject, ICountableItem
     public Sprite plantDieSprite;
     public int sellPrice;
     public int buyPrice;
+    public float liveInDryTime = 30f;
     [HideInInspector] public float timeBtwStages;
     [SerializeField] private int quantity;
     [SerializeField] private string plantName;

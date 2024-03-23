@@ -17,5 +17,6 @@ namespace Assets.Scripts.Plot
         public int plotId {  get; set; } 
         public bool isPlantDie { get; set; }
         public bool isDry {  get; set; }
+        public bool isBought {  get; set; }
     }
 }

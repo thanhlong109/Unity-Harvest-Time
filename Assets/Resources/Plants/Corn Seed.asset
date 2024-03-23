@@ -33,12 +33,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6d988a3071fd601478c1a6ebbc8d0eef, type: 3}
   - {fileID: 21300000, guid: 02011c54a69a8d14cb405af37f8196ec, type: 3}
   - {fileID: 21300000, guid: f26968934e4bfae46bef6c1e31c67f7b, type: 3}
-  timeToHarvest: 60
+  timeToHarvest: 120
   plantDieSprite: {fileID: -85561768, guid: 7c4fc6fd83fbf14428656a04e681fe0c, type: 3}
   sellPrice: 4
   buyPrice: 10
-  timeBtwStages: 3
-  quantity: 0
+  timeBtwStages: 6
+  quantity: 10
   plantName: Corn Seed
   icon: {fileID: 21300000, guid: d0bc1afa7f05fa746a772d29127695f0, type: 3}
   harvestedItem: {fileID: 11400000, guid: 33d6fab7946402d4ca1e4e76a57abf15, type: 2}

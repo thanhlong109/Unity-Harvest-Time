@@ -10,7 +10,7 @@ public class SaveData : ScriptableObject, ISaveAble
     public int money;
 
     [Header("Initial value")]
-    private int initialMoney = 50;
+    public int initialMoney = 50;
 
     public void SetToInitialData()
     {

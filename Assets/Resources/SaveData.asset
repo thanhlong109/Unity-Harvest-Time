@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5f01172ed58f348b4373fdf224cd75, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  money: 20
-  famerPosition: {fileID: 0}
+  money: 300
+  initialMoney: 50

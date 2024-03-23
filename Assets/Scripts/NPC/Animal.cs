@@ -1,3 +1,4 @@
+using Assets.Scripts.NPC;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +45,8 @@ public class Animal : MonoBehaviour
     [SerializeField] private float maxTimeDisplayStatus;
     [SerializeField] private ScriptableObject feedName;
     [SerializeField] private float wanderRadius = 17.11f;
-    [SerializeField] private Transform milestone;
+    [SerializeField] private AnimalKind animalKind;
+
 
     private bool isDisplayingStatus;
     private Action action = new Action();
@@ -97,10 +99,14 @@ public class Animal : MonoBehaviour
                 Hungry();
                 countTime = animalData.timeToHungry;
             }
-            Flip();
-            animator.SetBool(MOVE_AMIN, Mathf.Abs(agent.velocity.x) > 0);
             action.targetPos = new Vector3(transform.position.x, transform.position.y, 0);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Flip();
+        animator.SetBool(MOVE_AMIN, Mathf.Abs(agent.velocity.x) > 0.1f);
     }
 
     private void CheckStats()
@@ -127,7 +133,7 @@ public class Animal : MonoBehaviour
         {
             DisplayStatus(AnimalStatus.BAD);
         }
-        if(hungryAmount > 10)
+        if(hungryAmount > 20)
         {
             DisplayStatus(AnimalStatus.HUNGRY);
         }
@@ -258,7 +264,7 @@ public class Animal : MonoBehaviour
     {
         float waitTime = Random.Range(animalData.idleTime / 2, animalData.idleTime);
         yield return new WaitForSeconds(waitTime);
-        Vector3 randomDestination = GetRandomPosition(milestone.position, wanderRadius);
+        Vector3 randomDestination = GetRandomPosition(AnimalManager.Instance.gameObject.transform.position, wanderRadius);
         agent.SetDestination(randomDestination);
         SetState(AnimalState.MOVING);
     }
@@ -275,13 +281,17 @@ public class Animal : MonoBehaviour
 
     void Flip()
     {
-        if (agent.velocity.x * _currentDirection < 0)
+        if (Mathf.Abs(agent.velocity.x)>0.1f)
         {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            _currentDirection *= -1;
+            if (agent.velocity.x * _currentDirection < 0)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                _currentDirection *= -1;
 
+            }
         }
-
+        
+       
     }
 
 
@@ -293,5 +303,21 @@ public class Animal : MonoBehaviour
     private void OnMouseDown()
     {
         FarmerAction.Instance.SetAction(action);
+    }
+
+    public AnimaStats GetAnimalStats()
+    {
+        return new AnimaStats()
+        {
+          kind = animalKind,
+          position = transform.position,
+           
+        };
+    }
+
+    public void LoadStats(AnimaStats stats)
+    {
+        gameObject.transform.position = stats.position;
+        
     }
 }
